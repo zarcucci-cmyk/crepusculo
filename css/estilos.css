@@ -1,0 +1,9772 @@
+:root {
+    --negro: #050606;
+    --negro-2: #090d0c;
+    --blanco: #f1eee8;
+    --gris: #a5aaa6;
+    --rojo: #a6171d;
+    --rojo-oscuro: #650d12;
+    --rojo-claro: #d8a9a7;
+    --verde: #14211d;
+    --linea: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ============================= */
+/* GENERAL */
+/* ============================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--negro);
+    color: var(--blanco);
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+body.sin-scroll {
+    overflow: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.oculto {
+    display: none !important;
+}
+
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 76px;
+
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    background: rgba(3, 5, 5, 0.72);
+    backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    font-weight: 600;
+    letter-spacing: 8px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    position: relative;
+    font-size: 12px;
+    color: #d2d6d2;
+    transition: 0.3s;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--rojo);
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.boton-sonido {
+    padding: 9px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.04);
+    color: white;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.boton-sonido:hover {
+    border-color: var(--rojo);
+}
+
+.boton-sonido.activo {
+    background: var(--rojo);
+    border-color: var(--rojo);
+}
+
+
+/* ============================= */
+/* HERO */
+/* ============================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 130px 8% 80px;
+
+    overflow: hidden;
+
+    background: url("../img/forks.jpg") center / cover;
+}
+
+.video-fondo {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(2, 4, 4, 0.96) 0%,
+            rgba(2, 4, 4, 0.68) 45%,
+            rgba(2, 4, 4, 0.25) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(5, 6, 6, 1) 0%,
+            transparent 38%
+        );
+}
+
+.hero-contenido {
+    position: relative;
+    z-index: 2;
+
+    max-width: 800px;
+}
+
+.subtitulo {
+    margin-bottom: 18px;
+
+    font-size: 11px;
+    letter-spacing: 5px;
+
+    color: var(--rojo-claro);
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(70px, 9vw, 135px);
+    line-height: 0.78;
+
+    font-weight: 500;
+    letter-spacing: -2px;
+
+    margin-bottom: 35px;
+}
+
+.hero-texto {
+    max-width: 610px;
+
+    color: #c8cdca;
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.hero-botones {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 35px;
+}
+
+.btn {
+    min-height: 50px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 25px;
+
+    border-radius: 30px;
+    border: 1px solid transparent;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+.principal {
+    background: var(--rojo);
+    color: white;
+}
+
+.principal:hover {
+    background: #c11a21;
+}
+
+.secundario {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: white;
+}
+
+.secundario:hover {
+    border-color: var(--rojo);
+}
+
+.scroll {
+    position: absolute;
+
+    z-index: 5;
+
+    bottom: 27px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 6px;
+
+    animation: scrollAnimacion 1.6s infinite;
+}
+
+.scroll span {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+@keyframes scrollAnimacion {
+    0% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, 8px);
+    }
+
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+
+
+/* ============================= */
+/* SECCIONES */
+/* ============================= */
+
+.seccion {
+    padding: 110px 7%;
+}
+
+.titulo-seccion {
+    max-width: 760px;
+    margin-bottom: 50px;
+}
+
+.titulo-seccion h2,
+.playlist h2,
+.final h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(50px, 6vw, 82px);
+    font-weight: 500;
+
+    margin-bottom: 18px;
+}
+
+.titulo-seccion > p:last-child,
+.playlist-texto > p,
+.final p {
+    max-width: 650px;
+
+    line-height: 1.8;
+
+    color: var(--gris);
+}
+
+
+/* ============================= */
+/* SAGA */
+/* ============================= */
+
+.saga {
+    background: var(--negro-2);
+}
+
+.peliculas {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 15px;
+}
+
+.pelicula {
+    min-height: 470px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid var(--linea);
+
+    background: #111;
+}
+
+.pelicula img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.65s;
+}
+
+.pelicula::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            transparent 25%,
+            rgba(3, 5, 5, 0.95)
+        );
+}
+
+.pelicula:hover img {
+    transform: scale(1.08);
+}
+
+.pelicula-info {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 22px;
+    bottom: 22px;
+}
+
+.pelicula-info span {
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    color: var(--rojo-claro);
+}
+
+.pelicula-info h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+    font-weight: 500;
+
+    margin: 6px 0 15px;
+}
+
+.abrir-info {
+    padding-bottom: 4px;
+
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* ============================= */
+/* PERSONAJES */
+/* ============================= */
+
+.personajes {
+    background:
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(154, 23, 29, 0.10),
+            transparent 28%
+        ),
+        var(--negro);
+}
+
+.carrusel-personajes {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 55px minmax(0, 1fr) 55px;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.personajes-scroll {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+
+    overflow: hidden;
+}
+
+.personaje {
+    width: 100%;
+
+    min-width: 0;
+
+    position: relative;
+
+    aspect-ratio: 0.72;
+
+    overflow: hidden;
+
+    border: 1px solid var(--linea);
+
+    background: #0b0e0d;
+
+    animation: aparecerPersonaje 0.45s ease;
+}
+
+.personaje img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: grayscale(18%);
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+.personaje:hover img {
+    transform: scale(1.07);
+
+    filter: grayscale(0%);
+}
+
+.personaje::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 35%,
+            rgba(2, 4, 4, 0.98)
+        );
+
+    pointer-events: none;
+}
+
+.personaje-info {
+    position: absolute;
+
+    z-index: 3;
+
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+
+    transition: 0.3s;
+}
+
+.personaje:hover .personaje-info {
+    transform: translateY(-8px);
+}
+
+.personaje-info span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: var(--rojo-claro);
+}
+
+.personaje-info h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    margin-bottom: 4px;
+}
+
+.personaje-info p {
+    font-size: 11px;
+
+    color: #a9aeaa;
+}
+
+.flecha-personaje {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    justify-self: center;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    background: rgba(8, 12, 11, 0.92);
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.flecha-personaje:hover {
+    background: var(--rojo);
+    border-color: var(--rojo);
+
+    transform: scale(1.08);
+}
+
+.ayuda-carrusel {
+    margin-top: 18px;
+
+    text-align: center;
+
+    color: #747a76;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+@keyframes aparecerPersonaje {
+    from {
+        opacity: 0;
+        transform: translateX(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* ============================= */
+/* MUNDO */
+/* ============================= */
+
+.mundo {
+    background: #0a0f0d;
+}
+
+.lugares-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.lugar {
+    min-height: 360px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid var(--linea);
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.lugar::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(3, 5, 5, 0.92)
+        );
+
+    transition: 0.3s;
+}
+
+.lugar:hover::before {
+    background:
+        linear-gradient(
+            rgba(80, 5, 8, 0.12),
+            rgba(3, 5, 5, 0.78)
+        );
+}
+
+.lugar span {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 25px;
+    bottom: 24px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 45px;
+
+    transition: 0.3s;
+}
+
+.lugar:hover span {
+    transform: translateY(-8px);
+
+    color: var(--rojo-claro);
+}
+
+
+/* ============================= */
+/* CURIOSIDADES */
+/* ============================= */
+
+.curiosidades {
+    background:
+        radial-gradient(
+            circle at 10% 40%,
+            rgba(166, 23, 29, 0.10),
+            transparent 25%
+        ),
+        var(--negro);
+}
+
+.curiosidades-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+}
+
+.curiosidad {
+    min-height: 260px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid var(--linea);
+
+    background: #0d1210;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.curiosidad:hover {
+    border-color: rgba(166, 23, 29, 0.7);
+}
+
+.frente,
+.dorso {
+    position: absolute;
+
+    inset: 0;
+
+    padding: 25px;
+
+    transition: 0.4s;
+}
+
+.frente {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.frente span {
+    color: var(--rojo);
+
+    font-size: 25px;
+}
+
+.frente h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 34px;
+
+    font-weight: 500;
+}
+
+.frente p {
+    font-size: 11px;
+
+    color: var(--gris);
+}
+
+.dorso {
+    display: flex;
+
+    align-items: center;
+
+    line-height: 1.8;
+
+    color: #d0d4d1;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+}
+
+.curiosidad.abierta .frente {
+    opacity: 0;
+
+    transform: translateY(-20px);
+}
+
+.curiosidad.abierta .dorso {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ============================= */
+/* PLAYLIST */
+/* ============================= */
+
+.playlist {
+    background: #090c0b;
+}
+
+.playlist-contenido {
+    display: grid;
+
+    grid-template-columns: 1.15fr 0.85fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.canciones {
+    margin-top: 35px;
+
+    border-top: 1px solid var(--linea);
+}
+
+.cancion {
+    width: 100%;
+
+    display: flex;
+
+    gap: 20px;
+
+    padding: 18px 6px;
+
+    border: none;
+    border-bottom: 1px solid var(--linea);
+
+    background: transparent;
+
+    color: #b9beba;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.cancion span {
+    color: var(--rojo);
+}
+
+.cancion:hover,
+.cancion.activa {
+    color: white;
+
+    padding-left: 14px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(166, 23, 29, 0.09),
+            transparent
+        );
+}
+
+.reproductor {
+    min-height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    border: 1px solid var(--linea);
+
+    text-align: center;
+}
+
+.vinilo {
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    background:
+        repeating-radial-gradient(
+            circle,
+            #151515 0px,
+            #151515 3px,
+            #252525 4px,
+            #252525 6px
+        );
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    animation: girar 8s linear infinite;
+
+    animation-play-state: paused;
+}
+
+.reproductor.play .vinilo {
+    animation-play-state: running;
+}
+
+.centro-vinilo {
+    width: 82px;
+    height: 82px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: var(--rojo);
+
+    border: 12px solid #c5b4a9;
+
+    font-family: "Cormorant Garamond", serif;
+}
+
+@keyframes girar {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.reproduciendo {
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color: var(--rojo-claro);
+}
+
+.reproductor h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    margin: 10px 0 22px;
+}
+
+.barra-musica {
+    width: 100%;
+    height: 4px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    overflow: hidden;
+
+    margin-bottom: 15px;
+}
+
+.barra-musica div {
+    height: 100%;
+
+    width: 35%;
+
+    background: var(--rojo);
+
+    animation: musica 6s infinite alternate ease-in-out;
+}
+
+@keyframes musica {
+    from {
+        width: 20%;
+    }
+
+    to {
+        width: 85%;
+    }
+}
+
+.reproductor > p {
+    color: #767c78;
+
+    font-size: 11px;
+}
+
+
+/* ============================= */
+/* QUIZ */
+/* ============================= */
+
+.quiz {
+    background:
+        linear-gradient(
+            rgba(5, 6, 6, 0.78),
+            rgba(5, 6, 6, 0.96)
+        ),
+        url("../img/quiz-fondo.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.quiz-caja {
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 55px;
+
+    border: 1px solid var(--linea);
+
+    background: rgba(5, 8, 7, 0.90);
+
+    backdrop-filter: blur(12px);
+}
+
+.inicio-quiz {
+    text-align: center;
+}
+
+.inicio-quiz h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 42px;
+
+    font-weight: 500;
+
+    margin-bottom: 12px;
+}
+
+.inicio-quiz p {
+    color: var(--gris);
+
+    margin-bottom: 28px;
+}
+
+.quiz-superior {
+    margin-bottom: 35px;
+}
+
+.quiz-superior > span {
+    font-size: 11px;
+
+    color: #aaa;
+}
+
+.progreso {
+    height: 5px;
+
+    margin-top: 10px;
+
+    background: rgba(255, 255, 255, 0.10);
+}
+
+#barraProgreso {
+    width: 0;
+
+    height: 100%;
+
+    background: var(--rojo);
+
+    transition: 0.4s;
+}
+
+#pregunta {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 41px;
+
+    font-weight: 500;
+
+    margin-bottom: 28px;
+}
+
+.respuestas {
+    display: grid;
+
+    gap: 12px;
+}
+
+.respuesta {
+    width: 100%;
+
+    padding: 18px;
+
+    border: 1px solid var(--linea);
+
+    background: rgba(255, 255, 255, 0.025);
+
+    color: white;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.respuesta:hover {
+    transform: translateX(7px);
+
+    border-color: var(--rojo);
+
+    background: rgba(166, 23, 29, 0.10);
+}
+
+#resultadoQuiz h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 48px;
+
+    font-weight: 500;
+
+    margin-bottom: 14px;
+}
+
+#textoResultado {
+    line-height: 1.8;
+
+    color: var(--gris);
+
+    margin-bottom: 35px;
+}
+
+.resultado-porcentajes {
+    display: grid;
+
+    gap: 24px;
+
+    margin-bottom: 34px;
+}
+
+.porcentaje-titulo {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+}
+
+.barra-resultado {
+    width: 100%;
+
+    height: 10px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    overflow: hidden;
+}
+
+.barra-resultado div {
+    width: 0;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--rojo-oscuro),
+            var(--rojo)
+        );
+
+    transition: width 1.3s ease;
+}
+
+
+/* ============================= */
+/* FINAL */
+/* ============================= */
+
+.final {
+    min-height: 62vh;
+
+    padding: 90px 8%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(4, 6, 5, 0.65),
+            rgba(4, 6, 5, 0.96)
+        ),
+        url("../img/bosque.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.final > div {
+    max-width: 760px;
+}
+
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+footer {
+    padding: 30px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top: 1px solid var(--linea);
+
+    background: #030404;
+
+    color: #6e746f;
+
+    font-size: 11px;
+}
+
+
+/* ============================= */
+/* MODAL */
+/* ============================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 500;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.fondo-modal {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.82);
+
+    backdrop-filter: blur(8px);
+}
+
+.modal-contenido {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(600px, 100%);
+
+    padding: 45px;
+
+    background: #0b100e;
+
+    border: 1px solid rgba(166, 23, 29, 0.45);
+}
+
+.modal-contenido h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 48px;
+
+    font-weight: 500;
+
+    margin-bottom: 18px;
+}
+
+.modal-contenido > p:last-child {
+    color: #bac0bc;
+
+    line-height: 1.8;
+}
+
+#cerrarModal {
+    position: absolute;
+
+    right: 16px;
+    top: 12px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 1100px) {
+
+    .peliculas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .curiosidades-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 950px) {
+
+    .personajes-scroll {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    nav {
+        display: none;
+    }
+
+    .lugares-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .playlist-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 72px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .seccion {
+        padding: 85px 5%;
+    }
+
+    .peliculas {
+        grid-template-columns: 1fr;
+    }
+
+    .curiosidades-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .carrusel-personajes {
+        grid-template-columns: 42px minmax(0, 1fr) 42px;
+
+        gap: 8px;
+    }
+
+    .personajes-scroll {
+        grid-template-columns: 1fr;
+    }
+
+    .flecha-personaje {
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+    }
+
+    .pelicula {
+        min-height: 520px;
+    }
+
+    .hero h1 {
+        font-size: 56px;
+    }
+
+    .quiz-caja {
+        padding: 30px 20px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+}/* ===================================================== */
+/* PÁGINA INTERNA — FORKS */
+/* Todo este código se suma al CSS original */
+/* ===================================================== */
+
+.pagina-forks {
+    background: #050606;
+}
+
+
+/* ---------- HERO FORKS ---------- */
+
+.forks-hero {
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 130px 8% 90px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(2, 4, 4, 0.96) 0%,
+            rgba(2, 4, 4, 0.70) 50%,
+            rgba(2, 4, 4, 0.28) 100%
+        ),
+        url("../img/forks.jpg") center / cover;
+}
+
+
+/* niebla */
+
+.forks-niebla {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at 70% 60%,
+            rgba(220, 225, 220, 0.10),
+            transparent 45%
+        );
+
+    animation: moverNiebla 8s ease-in-out infinite alternate;
+
+    pointer-events: none;
+}
+
+@keyframes moverNiebla {
+
+    from {
+        transform: translateX(-20px);
+        opacity: 0.45;
+    }
+
+    to {
+        transform: translateX(30px);
+        opacity: 0.8;
+    }
+}
+
+
+.forks-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            0deg,
+            #050606 0%,
+            transparent 40%
+        );
+
+    pointer-events: none;
+}
+
+
+.forks-hero-contenido {
+    position: relative;
+    z-index: 3;
+
+    max-width: 800px;
+}
+
+
+.forks-coordenadas {
+    margin-bottom: 22px;
+
+    color: #7f8983;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+
+.forks-hero h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(75px, 10vw, 145px);
+    line-height: 0.75;
+
+    font-weight: 500;
+    letter-spacing: -3px;
+
+    margin-bottom: 40px;
+}
+
+
+.forks-intro {
+    max-width: 580px;
+
+    margin-bottom: 35px;
+
+    color: #bcc2be;
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* clima */
+
+.forks-clima {
+    position: absolute;
+
+    z-index: 4;
+
+    right: 7%;
+    bottom: 70px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 20px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    background: rgba(5, 8, 7, 0.55);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.forks-clima > span {
+    font-size: 25px;
+}
+
+
+.forks-clima small {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #858c88;
+
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+
+.forks-clima p {
+    font-size: 12px;
+
+    color: white;
+}
+
+
+/* botón volver */
+
+.boton-volver {
+    padding: 9px 16px;
+
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 30px;
+
+    color: #d4d8d5;
+
+    font-size: 11px;
+
+    transition: 0.3s;
+}
+
+
+.boton-volver:hover {
+    border-color: var(--rojo);
+    color: white;
+}
+
+
+/* ===================================================== */
+/* EXPLORADOR */
+/* ===================================================== */
+
+.forks-explorar {
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(20, 50, 40, 0.25),
+            transparent 30%
+        ),
+        #070a09;
+}
+
+
+/* progreso */
+
+.forks-progreso {
+    max-width: 650px;
+
+    margin-bottom: 55px;
+}
+
+
+.forks-progreso > div:first-child {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+}
+
+
+.forks-progreso span {
+    color: #777f7a;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+
+.forks-progreso strong {
+    color: var(--rojo-claro);
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+
+.forks-progreso-barra {
+    width: 100%;
+    height: 2px;
+
+    background: rgba(255,255,255,0.10);
+
+    overflow: hidden;
+}
+
+
+#progresoForks {
+    width: 0%;
+    height: 100%;
+
+    background: var(--rojo);
+
+    transition: width 0.8s ease;
+}
+
+
+/* ===================================================== */
+/* LUGARES */
+/* ===================================================== */
+
+.forks-lugares {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+.forks-lugar {
+    min-height: 390px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 28px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.11);
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d1411,
+            #080b0a
+        );
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
+}
+
+
+.forks-lugar:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(166, 23, 29, 0.65);
+
+    background:
+        linear-gradient(
+            135deg,
+            #111b17,
+            #080b0a
+        );
+}
+
+
+/* número grande */
+
+.forks-numero {
+    position: absolute;
+
+    right: 25px;
+    top: 15px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 95px;
+
+    color: rgba(255,255,255,0.035);
+
+    pointer-events: none;
+}
+
+
+.forks-lugar-contenido {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: auto;
+
+    max-width: 430px;
+}
+
+
+.forks-lugar-contenido > span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--rojo-claro);
+
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+
+.forks-lugar h3 {
+    margin-bottom: 15px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 48px;
+    font-weight: 500;
+}
+
+
+.forks-lugar p {
+    margin-bottom: 25px;
+
+    color: #9da59f;
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* botón descubrir */
+
+.forks-descubrir {
+    padding: 0 0 5px;
+
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    transition: 0.3s;
+}
+
+
+.forks-descubrir:hover {
+    color: var(--rojo-claro);
+
+    border-color: var(--rojo);
+}
+
+
+/* lugar ya visitado */
+
+.forks-lugar.descubierto::before {
+    content: "DESCUBIERTO";
+
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    color: #8fa89c;
+
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+
+/* ===================================================== */
+/* ARCHIVO CONFIDENCIAL */
+/* ===================================================== */
+
+.forks-archivo {
+    min-height: 650px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(115, 15, 20, 0.12),
+            transparent 35%
+        ),
+        #050606;
+}
+
+
+.forks-archivo-contenido {
+    max-width: 720px;
+}
+
+
+.forks-archivo h2 {
+    margin-bottom: 20px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    font-weight: 500;
+}
+
+
+.forks-archivo-contenido > p {
+    color: #909793;
+
+    line-height: 1.8;
+}
+
+
+.archivo-bloqueado {
+    margin: 45px auto 0;
+
+    max-width: 430px;
+
+    padding: 45px 30px;
+
+    border: 1px dashed rgba(255,255,255,0.18);
+
+    background: rgba(255,255,255,0.025);
+
+    transition: 0.6s;
+}
+
+
+.archivo-bloqueado > span {
+    display: block;
+
+    margin-bottom: 17px;
+
+    font-size: 30px;
+}
+
+
+.archivo-bloqueado p {
+    margin-bottom: 8px;
+
+    color: #c3c8c5;
+
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+
+.archivo-bloqueado small {
+    color: #656c68;
+
+    font-size: 10px;
+}
+
+
+/* archivo desbloqueado */
+
+.archivo-bloqueado.desbloqueado {
+    border-style: solid;
+
+    border-color: rgba(166,23,29,0.7);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(166,23,29,0.12),
+            rgba(255,255,255,0.02)
+        );
+}
+
+
+/* ===================================================== */
+/* PANEL LATERAL */
+/* ===================================================== */
+
+.forks-panel {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 500;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.forks-panel-fondo {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.78);
+
+    backdrop-filter: blur(5px);
+}
+
+
+.forks-panel-contenido {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(620px, 90%);
+
+    height: 100%;
+
+    overflow-y: auto;
+
+    padding: 100px 60px 60px;
+
+    border-left: 1px solid rgba(255,255,255,0.12);
+
+    background:
+        linear-gradient(
+            160deg,
+            #0d1411,
+            #050606
+        );
+
+    animation: entrarPanelForks 0.5s ease;
+}
+
+
+@keyframes entrarPanelForks {
+
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+.forks-panel-cerrar {
+    position: absolute;
+
+    top: 28px;
+    right: 30px;
+
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.forks-panel-cerrar:hover {
+    background: var(--rojo);
+
+    border-color: var(--rojo);
+
+    transform: rotate(90deg);
+}
+
+
+.forks-panel-contenido h2 {
+    margin-bottom: 25px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 65px;
+
+    font-weight: 500;
+}
+
+
+#forksPanelTexto {
+    color: #b1b7b3;
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+#forksPanelExtra {
+    margin-top: 35px;
+}
+
+
+/* ===================================================== */
+/* RESPONSIVE */
+/* ===================================================== */
+
+@media (max-width: 850px) {
+
+    .forks-lugares {
+        grid-template-columns: 1fr;
+    }
+
+    .forks-clima {
+        display: none;
+    }
+
+    .forks-panel-contenido {
+        width: 100%;
+
+        padding:
+            90px 30px
+            50px;
+    }
+
+    .forks-hero h1 {
+        font-size: 75px;
+    }
+
+}
+/* ===================================================== */
+/* FORKS — IMÁGENES DE LOS LUGARES */
+/* ===================================================== */
+
+.forks-lugar {
+    background-size: cover;
+    background-position: center;
+    isolation: isolate;
+}
+
+/* Oscurece la foto para poder leer el texto */
+.forks-lugar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3, 6, 5, 0.15) 0%,
+            rgba(3, 6, 5, 0.45) 45%,
+            rgba(3, 6, 5, 0.97) 100%
+        );
+
+    transition: 0.5s ease;
+}
+
+.forks-lugar:hover::after {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3, 6, 5, 0.05) 0%,
+            rgba(3, 6, 5, 0.30) 42%,
+            rgba(3, 6, 5, 0.94) 100%
+        );
+}
+
+/* CASA SWAN */
+
+.forks-lugar[data-lugar="swan"] {
+    background-image: url("../img/casa-swan.jpg");
+}
+
+/* INSTITUTO */
+
+.forks-lugar[data-lugar="instituto"] {
+    background-image: url("../img/forks-high-school.jpg");
+}
+
+/* HOSPITAL */
+
+.forks-lugar[data-lugar="hospital"] {
+    background-image: url("../img/hospital-forks.jpg");
+}
+
+/* BOSQUE */
+
+.forks-lugar[data-lugar="bosque"] {
+    background-image: url("../img/bosque-forks.jpg");
+}
+
+/* Aseguramos que el contenido quede encima de la foto */
+
+.forks-numero,
+.forks-lugar-contenido {
+    z-index: 2;
+}
+/* ===================================================== */
+/* FORKS — CONTENIDO VISUAL DE LOS PANELES */
+/* ===================================================== */
+
+.forks-panel-imagen {
+    width: 100%;
+    height: 290px;
+
+    margin: 28px 0;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    position: relative;
+}
+
+.forks-panel-imagen img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+.forks-panel-imagen:hover img {
+    transform: scale(1.05);
+}
+
+
+/* DETALLES */
+
+.forks-detalle {
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.forks-detalle > span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--rojo-claro);
+
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.forks-detalle h3 {
+    margin-bottom: 10px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.forks-detalle p {
+    color: #9da59f;
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* BOTONES SECRETOS */
+
+.forks-secreto {
+    margin-top: 25px;
+
+    padding: 12px 0;
+
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.35);
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.forks-secreto:hover {
+    color: var(--rojo-claro);
+    border-color: var(--rojo);
+}
+
+
+/* EVIDENCIA */
+
+.forks-evidencia {
+    margin-top: 25px;
+
+    padding: 22px;
+
+    border-left: 2px solid var(--rojo);
+
+    background: rgba(166,23,29,0.07);
+
+    color: #adb4af;
+
+    font-family: monospace;
+
+    font-size: 11px;
+    line-height: 2;
+}
+
+
+/* EXPEDIENTE CARLISLE */
+
+.forks-expediente {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1px;
+
+    margin-top: 30px;
+
+    background: rgba(255,255,255,0.10);
+}
+
+.forks-expediente > div {
+    padding: 18px;
+
+    background: #0a0e0c;
+}
+
+.forks-expediente span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #68706b;
+
+    font-size: 7px;
+    letter-spacing: 2px;
+}
+
+.forks-expediente strong {
+    color: #d6dad7;
+
+    font-size: 11px;
+    font-weight: 400;
+}
+
+
+/* BOSQUE */
+
+.forks-bosque-alerta {
+    margin-top: 30px;
+
+    padding: 25px;
+
+    border: 1px solid rgba(166,23,29,0.45);
+
+    background: rgba(80,5,8,0.08);
+}
+
+.forks-bosque-alerta > span {
+    color: var(--rojo-claro);
+
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.forks-bosque-alerta > p {
+    margin-top: 12px;
+
+    color: #9da49f;
+}
+
+.rastro-resultado {
+    position: relative;
+
+    min-height: 260px;
+
+    margin-top: 25px;
+
+    padding: 35px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.30),
+            rgba(0,0,0,0.82)
+        ),
+        url("../img/bosque-ojos.jpg") center / cover;
+}
+
+.rastro-resultado p {
+    position: relative;
+
+    z-index: 2;
+
+    color: #d5d8d6;
+}
+
+.ojos-bosque {
+    position: absolute;
+
+    z-index: 3;
+
+    top: 38%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: #b71920;
+
+    font-size: 19px;
+
+    text-shadow:
+        0 0 8px #a6171d,
+        0 0 20px #650d12;
+
+    animation: aparecerOjos 2s ease infinite alternate;
+}
+
+@keyframes aparecerOjos {
+
+    from {
+        opacity: 0.15;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 600px) {
+
+    .forks-expediente {
+        grid-template-columns: 1fr;
+    }
+
+    .forks-panel-imagen {
+        height: 220px;
+    }
+
+}
+/* ===================================================== */
+/* PÁGINA INTERNA — LA PUSH */
+/* ===================================================== */
+
+.pagina-lapush {
+    background: #050707;
+}
+
+
+/* ===================================================== */
+/* HERO LA PUSH */
+/* ===================================================== */
+
+.lapush-hero {
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 130px 8% 90px;
+    overflow: hidden;
+}
+
+.lapush-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.lapush-overlay {
+    z-index: 1;
+}
+
+.lapush-hero-contenido,
+.lapush-clima,
+.lapush-hero .scroll {
+    position: relative;
+    z-index: 2;
+}
+
+.lapush-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            0deg,
+            #050707 0%,
+            transparent 42%
+        );
+
+    pointer-events: none;
+}
+
+.lapush-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at 75% 65%,
+            rgba(190, 205, 205, 0.10),
+            transparent 42%
+        );
+
+    pointer-events: none;
+
+    animation: nieblaLapush 8s ease-in-out infinite alternate;
+}
+
+@keyframes nieblaLapush {
+    from {
+        transform: translateX(-25px);
+        opacity: 0.4;
+    }
+
+    to {
+        transform: translateX(25px);
+        opacity: 0.85;
+    }
+}
+
+.lapush-hero-contenido {
+    position: relative;
+    z-index: 3;
+
+    max-width: 760px;
+}
+
+.lapush-coordenadas {
+    margin-bottom: 22px;
+
+    color: #778486;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.lapush-hero h1 {
+    margin-bottom: 38px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(80px, 11vw, 155px);
+    line-height: 0.72;
+
+    font-weight: 500;
+    letter-spacing: -4px;
+}
+
+.lapush-intro {
+    max-width: 590px;
+
+    margin-bottom: 35px;
+
+    color: #b9c2c1;
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.lapush-aviso {
+    position: absolute;
+
+    z-index: 4;
+
+    right: 7%;
+    bottom: 70px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 20px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    background: rgba(4, 9, 10, 0.58);
+
+    backdrop-filter: blur(12px);
+}
+
+.lapush-aviso > span {
+    font-size: 25px;
+}
+
+.lapush-aviso small {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #768184;
+
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+.lapush-aviso p {
+    color: white;
+    font-size: 12px;
+}
+
+
+/* ===================================================== */
+/* TERRITORIO */
+/* ===================================================== */
+
+.lapush-territorio {
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(29, 58, 60, 0.20),
+            transparent 30%
+        ),
+        #070b0b;
+}
+
+.lapush-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.lapush-lugar {
+    min-height: 530px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.11);
+
+    background-size: cover;
+    background-position: center;
+
+    isolation: isolate;
+
+    transition:
+        transform 0.5s ease,
+        border-color 0.5s ease;
+}
+
+.lapush-lugar:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(145, 176, 177, 0.45);
+}
+
+.lapush-lugar::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(1, 4, 5, 0.10) 0%,
+            rgba(1, 4, 5, 0.25) 40%,
+            rgba(1, 4, 5, 0.98) 100%
+        );
+
+    transition: 0.5s;
+}
+
+.lapush-lugar:hover::after {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(1, 4, 5, 0.02) 0%,
+            rgba(1, 4, 5, 0.18) 40%,
+            rgba(1, 4, 5, 0.94) 100%
+        );
+}
+
+.lapush-playa {
+    background-image: url("../img/la-push-playa.jpg");
+}
+
+.lapush-reserva {
+    background-image: url("../img/reserva-quileute.jpg");
+}
+
+.lapush-numero {
+    position: absolute;
+
+    z-index: 2;
+
+    top: 20px;
+    right: 25px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 100px;
+
+    color: rgba(255,255,255,0.08);
+}
+
+.lapush-lugar-info {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+}
+
+.lapush-lugar-info > p {
+    margin-bottom: 10px;
+
+    color: #9cb2b2;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.lapush-lugar-info h3 {
+    margin-bottom: 13px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 55px;
+    font-weight: 500;
+}
+
+.lapush-lugar-info > span {
+    display: block;
+
+    max-width: 420px;
+
+    color: #aab4b3;
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* ===================================================== */
+/* JACOB BLACK */
+/* ===================================================== */
+
+.lapush-jacob {
+    min-height: 850px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    background: #050707;
+}
+
+.lapush-jacob-imagen {
+    min-height: 680px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(2,5,5,0.70),
+            transparent 55%
+        ),
+        url("../img/jacob-lapush.jpg") center / cover;
+}
+
+.lapush-jacob-etiqueta {
+    position: absolute;
+
+    left: 25px;
+    bottom: 25px;
+
+    padding: 10px 14px;
+
+    background: rgba(3,7,7,0.70);
+
+    backdrop-filter: blur(8px);
+
+    color: #c3ccca;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.lapush-jacob-texto {
+    max-width: 570px;
+}
+
+.lapush-jacob-texto h2 {
+    margin-bottom: 25px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(65px, 7vw, 100px);
+    line-height: 0.8;
+
+    font-weight: 500;
+}
+
+.lapush-jacob-texto > p:not(.subtitulo) {
+    margin-bottom: 40px;
+
+    color: #9ea9a7;
+
+    line-height: 1.9;
+}
+
+.lapush-dato {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.lapush-dato span {
+    color: #667271;
+
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+.lapush-dato strong {
+    color: #d3d9d7;
+
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+
+/* ===================================================== */
+/* LA MANADA */
+/* ===================================================== */
+
+.lapush-manada {
+    min-height: 800px;
+
+    background:
+        linear-gradient(
+            rgba(2,5,5,0.78),
+            rgba(2,5,5,0.97)
+        ),
+        url("../img/bosque-lapush.jpg") center / cover;
+}
+
+.manada-contenedor {
+    max-width: 1000px;
+
+    margin: 70px auto 0;
+
+    text-align: center;
+}
+
+.manada-siluetas {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 45px;
+}
+
+.manada-siluetas span {
+    min-height: 280px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-end;
+
+    padding: 20px;
+
+
+
+  
+
+    color: rgba(255,255,255,0.25);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 40px;
+
+    transition: 0.4s;
+}
+
+.manada-siluetas span:hover {
+
+
+    transform: translateY(-7px);
+}
+
+.manada-mensaje {
+    margin-bottom: 25px;
+
+    color: #9ca6a4;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+}
+
+
+/* ===================================================== */
+/* MOMENTO LOBO */
+/* ===================================================== */
+
+.lapush-lobo {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 900;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    background: #020404;
+}
+
+.lapush-lobo-fondo {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.82)
+        ),
+        url("../img/lobo-bosque.jpg") center / cover;
+
+    animation: acercarLobo 8s ease forwards;
+}
+
+@keyframes acercarLobo {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.12);
+    }
+}
+
+.lapush-lobo-contenido {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+
+    text-align: center;
+}
+
+.lapush-lobo-contenido h2 {
+    margin-bottom: 20px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(65px, 8vw, 110px);
+
+    font-weight: 500;
+}
+
+.lapush-lobo-contenido > p:not(.subtitulo) {
+    max-width: 520px;
+
+    margin: 0 auto 35px;
+
+    color: #aeb6b4;
+
+    line-height: 1.8;
+}
+
+.lapush-ojos {
+    margin: 35px 0;
+
+    color: #b71d22;
+
+    font-size: 24px;
+
+    text-shadow:
+        0 0 8px #a6171d,
+        0 0 20px #650d12,
+        0 0 35px #650d12;
+
+    animation: ojosLapush 1.7s ease-in-out infinite alternate;
+}
+
+@keyframes ojosLapush {
+    from {
+        opacity: 0.15;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ===================================================== */
+/* LEYENDA FINAL */
+/* ===================================================== */
+
+.lapush-leyenda {
+    min-height: 750px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(35, 65, 62, 0.20),
+            transparent 38%
+        ),
+        #050707;
+}
+
+.lapush-leyenda > div {
+    max-width: 800px;
+}
+
+.lapush-leyenda h2 {
+    margin-bottom: 25px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    font-weight: 500;
+    line-height: 0.95;
+}
+
+.lapush-leyenda p:not(.subtitulo) {
+    max-width: 650px;
+
+    margin: 0 auto 35px;
+
+    color: #969f9d;
+
+    line-height: 1.9;
+}
+
+
+/* ===================================================== */
+/* LA PUSH — RESPONSIVE */
+/* ===================================================== */
+
+@media (max-width: 850px) {
+
+    .lapush-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lapush-jacob {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .lapush-jacob-imagen {
+        min-height: 550px;
+    }
+
+    .manada-siluetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lapush-aviso {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .lapush-hero h1 {
+        font-size: 80px;
+    }
+
+    .lapush-lugar {
+        min-height: 450px;
+    }
+
+    .lapush-jacob-imagen {
+        min-height: 470px;
+    }
+
+    .manada-siluetas {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .manada-siluetas span {
+        min-height: 190px;
+    }
+}
+
+
+/* ===================================================== */
+/* LA PUSH — MIEMBROS DE LA MANADA */
+/* ===================================================== */
+
+.pagina-lapush .manada-siluetas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    width: 100%;
+    margin: 55px auto 40px;
+}
+
+.pagina-lapush .manada-miembro {
+    position: relative;
+    height: 430px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #0b0d0d;
+}
+
+.pagina-lapush .manada-miembro img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(35%) brightness(0.72);
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.pagina-lapush .manada-miembro::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.15) 55%,
+        transparent 100%
+    );
+}
+
+.pagina-lapush .manada-miembro:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%) brightness(0.9);
+}
+
+.pagina-lapush .manada-info {
+    position: absolute;
+    z-index: 2;
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+}
+
+.pagina-lapush .manada-info span {
+    display: block;
+    margin-bottom: 7px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: #c98282;
+}
+
+.pagina-lapush .manada-info h3 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 31px;
+    font-weight: 500;
+    color: #f3f0e9;
+}
+
+@media (max-width: 900px) {
+    .pagina-lapush .manada-siluetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .pagina-lapush .manada-siluetas {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===================================================== */
+/* LA PUSH — VIDEO HERO */
+/* ===================================================== */
+
+.lapush-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+.lapush-hero .lapush-overlay {
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(2, 5, 6, 0.88) 0%,
+            rgba(2, 5, 6, 0.55) 48%,
+            rgba(2, 5, 6, 0.20) 100%
+        ),
+        linear-gradient(
+            0deg,
+            #050707 0%,
+            transparent 45%
+        );
+}
+
+.lapush-hero-contenido {
+    z-index: 3;
+}
+
+.lapush-hero .scroll {
+    z-index: 3;
+}
+/* ================================================= */
+/* CASA CULLEN                                       */
+/* ================================================= */
+
+.pagina-cullen {
+    background: #090c0b;
+    color: #f3f2ee;
+}
+
+
+/* HERO CASA CULLEN */
+
+.cullen-hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 130px 8% 90px;
+    overflow: hidden;
+}
+
+
+/* IMAGEN PRINCIPAL */
+
+.cullen-hero-fondo {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../img/cullen-casa.jpg");
+    background-size: cover;
+    background-position: center;
+
+    transform: scale(1.03);
+    animation: cullenZoom 18s ease-in-out infinite alternate;
+
+    z-index: 0;
+}
+
+
+/* CAPA PARA QUE SE LEA EL TEXTO */
+
+.cullen-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 8, 7, 0.88) 0%,
+            rgba(5, 8, 7, 0.55) 45%,
+            rgba(5, 8, 7, 0.15) 78%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(5, 8, 7, 0.7) 0%,
+            transparent 50%
+        );
+
+    z-index: 1;
+}
+
+
+/* TEXTO HERO */
+
+.cullen-hero-contenido {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+.cullen-etiqueta {
+    margin: 12px 0 20px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.cullen-hero h1 {
+    margin: 0 0 25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(5rem, 9vw, 9rem);
+    font-weight: 500;
+    line-height: 0.75;
+    letter-spacing: -0.04em;
+}
+
+.cullen-intro {
+    max-width: 480px;
+    margin-bottom: 32px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.92rem;
+    font-weight: 300;
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* DATO ABAJO A LA DERECHA */
+
+.cullen-hero-dato {
+    position: absolute;
+    right: 8%;
+    bottom: 85px;
+
+    z-index: 2;
+    text-align: right;
+}
+
+.cullen-hero-dato span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.cullen-hero-dato p {
+    margin-top: 6px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.3rem;
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* MOVIMIENTO LENTO DE LA FOTO */
+
+@keyframes cullenZoom {
+
+    from {
+        transform: scale(1.03);
+    }
+
+    to {
+        transform: scale(1.09);
+    }
+
+}
+
+
+/* =============================== */
+/* PRIMERA PARTE DEL INTERIOR      */
+/* =============================== */
+
+.cullen-casa {
+    background: #0b0e0d;
+}
+
+.cullen-interior {
+    width: min(1200px, 90%);
+    margin: 80px auto 0;
+
+    display: grid;
+    grid-template-columns: 1.35fr 0.8fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.cullen-interior-imagen {
+    overflow: hidden;
+}
+
+.cullen-interior-imagen img {
+    display: block;
+    width: 100%;
+    height: 580px;
+
+    object-fit: cover;
+
+    transition: transform 1.2s ease;
+}
+
+.cullen-interior-imagen:hover img {
+    transform: scale(1.04);
+}
+
+.cullen-interior-texto span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(255, 255, 255, 0.42);
+}
+
+.cullen-interior-texto h3 {
+    margin: 18px 0 25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 500;
+    line-height: 0.9;
+}
+
+.cullen-interior-texto p {
+    max-width: 390px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .cullen-interior {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .cullen-interior-imagen img {
+        height: 430px;
+    }
+
+    .cullen-hero-dato {
+        display: none;
+    }
+
+}
+/* ================================================= */
+/* FAMILIA CULLEN                                    */
+/* ================================================= */
+
+.cullen-familia {
+    background: #080a09;
+    padding-top: 120px;
+    padding-bottom: 140px;
+}
+
+
+/* GRID DE PERSONAJES */
+
+.cullen-familia-grid {
+    width: min(1250px, 90%);
+    margin: 75px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+/* SEGUNDA FILA CENTRADA */
+
+.cullen-miembro:nth-child(5) {
+    grid-column: 1 / 2;
+    transform: translateX(50%);
+}
+
+.cullen-miembro:nth-child(6) {
+    grid-column: 2 / 3;
+    transform: translateX(50%);
+}
+
+.cullen-miembro:nth-child(7) {
+    grid-column: 3 / 4;
+    transform: translateX(50%);
+}
+
+/* CONTROLES CARRUSEL FAMILIA CULLEN */
+
+.cullen-familia-controles {
+    width: 92%;
+    margin: 45px auto 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cullen-familia-controles > span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.cullen-familia-controles > div {
+    display: flex;
+    gap: 10px;
+}
+
+.cullen-flecha {
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+
+    background: transparent;
+    color: white;
+
+    font-size: 1.2rem;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.cullen-flecha:hover {
+    background: white;
+    color: #080a09;
+}
+   
+
+
+/* CADA PERSONA */
+
+.cullen-miembro {
+    position: relative;
+    height: 500px;
+
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+/* FOTO */
+
+.cullen-miembro img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter: grayscale(25%) brightness(0.8);
+
+    transition:
+        transform 0.8s ease,
+        filter 0.8s ease;
+}
+
+
+/* OSCURECIDO ABAJO */
+
+.cullen-miembro::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(3, 5, 4, 0.95) 0%,
+        rgba(3, 5, 4, 0.45) 38%,
+        transparent 70%
+    );
+
+    z-index: 1;
+}
+
+
+/* INFORMACIÓN */
+
+.cullen-miembro-info {
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    bottom: 26px;
+
+    z-index: 2;
+
+    transform: translateY(48px);
+    transition: transform 0.55s ease;
+}
+
+.cullen-miembro-info span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.cullen-miembro-info h3 {
+    margin: 8px 0 12px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+
+    color: #f3f2ee;
+}
+
+.cullen-miembro-info p {
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.76rem;
+    line-height: 1.65;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    opacity: 0;
+    transition: opacity 0.45s ease;
+}
+
+
+/* HOVER */
+
+.cullen-miembro:hover img {
+    transform: scale(1.055);
+    filter: grayscale(0%) brightness(0.58);
+}
+
+.cullen-miembro:hover .cullen-miembro-info {
+    transform: translateY(0);
+}
+
+.cullen-miembro:hover .cullen-miembro-info p {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+
+    .cullen-familia-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+   
+
+}
+
+@media (max-width: 600px) {
+
+    .cullen-familia-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cullen-miembro {
+        height: 480px;
+    }
+
+}
+/* ================================================= */
+/* PIANO DE EDWARD                                   */
+/* ================================================= */
+
+.cullen-piano {
+    min-height: 90vh;
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    align-items: stretch;
+
+    padding: 0;
+    background: #080a09;
+
+    overflow: hidden;
+}
+
+.cullen-piano-imagen {
+    position: relative;
+    min-height: 750px;
+    overflow: hidden;
+}
+
+.cullen-piano-imagen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent 55%,
+        #080a09 100%
+    );
+}
+
+.cullen-piano-imagen img {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    inset: 0;
+
+    object-fit: cover;
+
+    filter: brightness(0.72) contrast(1.05);
+
+    transition: transform 1.4s ease;
+}
+
+.cullen-piano:hover .cullen-piano-imagen img {
+    transform: scale(1.035);
+}
+
+.cullen-piano-contenido {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 80px 9% 80px 5%;
+}
+
+.cullen-piano-contenido h2 {
+    margin: 14px 0 25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 7vw, 7rem);
+    font-weight: 500;
+    line-height: 0.9;
+}
+
+.cullen-piano-contenido > p:not(.subtitulo) {
+    max-width: 430px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(255, 255, 255, 0.62);
+}
+
+.cullen-piano-nota {
+    display: inline-block;
+    width: fit-content;
+
+    margin-top: 45px;
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+@media (max-width: 800px) {
+
+    .cullen-piano {
+        grid-template-columns: 1fr;
+    }
+
+    .cullen-piano-imagen {
+        min-height: 550px;
+    }
+
+    .cullen-piano-imagen::after {
+        background: linear-gradient(
+            0deg,
+            #080a09 0%,
+            transparent 45%
+        );
+    }
+
+    .cullen-piano-contenido {
+        padding: 60px 8% 100px;
+    }
+
+}
+/* ================================================= */
+/* BIRRETES CULLEN                                   */
+/* ================================================= */
+
+.cullen-birretes {
+    min-height: 90vh;
+    padding: 120px 8%;
+
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    align-items: center;
+    gap: 80px;
+
+    background: #0c0f0e;
+}
+
+
+/* TEXTO */
+
+.cullen-birretes-texto {
+    max-width: 480px;
+}
+
+.cullen-birretes-texto h2 {
+    margin: 15px 0 28px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 6vw, 6.5rem);
+    font-weight: 500;
+    line-height: 0.88;
+}
+
+.cullen-birretes-texto > p:not(.subtitulo) {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* FOTO */
+
+.cullen-birretes-imagen {
+    position: relative;
+    height: 650px;
+
+    overflow: hidden;
+}
+
+.cullen-birretes-imagen img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter: brightness(0.75);
+
+    transition:
+        transform 1.2s ease,
+        filter 1.2s ease;
+}
+
+.cullen-birretes-imagen:hover img {
+    transform: scale(1.04);
+    filter: brightness(0.9);
+}
+
+
+/* DETALLE SOBRE LA FOTO */
+
+.cullen-birretes-imagen::after {
+    content: "WE GRADUATE A LOT.";
+
+    position: absolute;
+    right: 25px;
+    bottom: 22px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.28em;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* CELULAR */
+
+@media (max-width: 800px) {
+
+    .cullen-birretes {
+        grid-template-columns: 1fr;
+        gap: 50px;
+
+        padding: 90px 8%;
+    }
+
+    .cullen-birretes-imagen {
+        height: 500px;
+    }
+
+}
+/* ================================================= */
+/* HABITACIÓN DE EDWARD                              */
+/* ================================================= */
+
+.cullen-habitacion {
+    min-height: 90vh;
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    align-items: center;
+
+    padding: 100px 8%;
+    gap: 70px;
+
+    background: #080a09;
+}
+
+
+/* IMAGEN */
+
+.cullen-habitacion-imagen {
+    position: relative;
+    height: 680px;
+
+    overflow: hidden;
+}
+
+.cullen-habitacion-imagen img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter: brightness(0.7);
+
+    transition:
+        transform 1.3s ease,
+        filter 1.3s ease;
+}
+
+.cullen-habitacion-imagen:hover img {
+    transform: scale(1.035);
+    filter: brightness(0.85);
+}
+
+
+/* NÚMERO DECORATIVO */
+
+.cullen-habitacion-imagen::after {
+    content: "1918";
+
+    position: absolute;
+    left: 25px;
+    bottom: 15px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(5rem, 9vw, 9rem);
+    line-height: 1;
+
+    color: rgba(255, 255, 255, 0.08);
+
+    pointer-events: none;
+}
+
+
+/* TEXTO */
+
+.cullen-habitacion-texto {
+    max-width: 450px;
+}
+
+.cullen-habitacion-texto h2 {
+    margin: 15px 0 28px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 7vw, 7rem);
+    font-weight: 500;
+    line-height: 0.85;
+}
+
+.cullen-habitacion-texto > p:not(.subtitulo) {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .cullen-habitacion {
+        grid-template-columns: 1fr;
+        gap: 45px;
+
+        padding: 90px 8%;
+    }
+
+    .cullen-habitacion-imagen {
+        height: 520px;
+    }
+
+}
+/* ================================================= */
+/* GARAGE CULLEN                                     */
+/* ================================================= */
+
+.cullen-garage {
+    padding: 120px 8% 140px;
+    background: #0c0f0e;
+}
+
+.cullen-garage .titulo-seccion {
+    margin-bottom: 70px;
+}
+
+
+/* IMAGEN GRANDE */
+
+.cullen-garage-imagen {
+    width: min(1300px, 100%);
+    height: 680px;
+    margin: 0 auto;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.cullen-garage-imagen img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter: brightness(0.7);
+
+    transition:
+        transform 1.4s ease,
+        filter 1.4s ease;
+}
+
+.cullen-garage-imagen:hover img {
+    transform: scale(1.035);
+    filter: brightness(0.88);
+}
+
+
+/* TEXTO SOBRE LA FOTO */
+
+.cullen-garage-imagen::after {
+    content: "VOLVO · MERCEDES · PORSCHE";
+
+    position: absolute;
+    left: 30px;
+    bottom: 25px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .cullen-garage {
+        padding: 90px 8%;
+    }
+
+    .cullen-garage-imagen {
+        height: 480px;
+    }
+
+}
+/* ================================================= */
+/* CIERRE CASA CULLEN                                */
+/* ================================================= */
+
+.cullen-cierre {
+    min-height: 75vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 120px 8%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.04),
+            transparent 45%
+        ),
+        #070908;
+
+    text-align: center;
+}
+
+.cullen-cierre-contenido {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.cullen-cierre-contenido h2 {
+    margin: 18px 0 30px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4.5rem, 8vw, 8rem);
+    font-weight: 500;
+    line-height: 0.82;
+
+    color: #f3f2ee;
+}
+
+.cullen-cierre-contenido > p:not(.subtitulo) {
+    max-width: 540px;
+    margin: 0 auto 40px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(255, 255, 255, 0.58);
+}
+
+
+/* PEQUEÑA LÍNEA DECORATIVA */
+
+.cullen-cierre-contenido::before {
+    content: "";
+
+    display: block;
+
+    width: 1px;
+    height: 70px;
+
+    margin: 0 auto 45px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(255, 255, 255, 0.35)
+    );
+}
+
+
+@media (max-width: 800px) {
+
+    .cullen-cierre {
+        min-height: 65vh;
+        padding: 90px 8%;
+    }
+
+}
+/* ================================================= */
+/* AJUSTE FINAL DE ESCALA — CASA CULLEN              */
+/* ================================================= */
+
+/* INTERIOR */
+.cullen-interior-imagen img {
+    height: 500px;
+}
+
+/* FAMILIA */
+.cullen-miembro {
+    height: 440px;
+}
+
+/* PIANO */
+.cullen-piano {
+    min-height: 75vh;
+}
+
+.cullen-piano-imagen {
+    min-height: 600px;
+}
+
+/* BIRRETES */
+.cullen-birretes {
+    min-height: auto;
+    padding-top: 95px;
+    padding-bottom: 95px;
+}
+
+.cullen-birretes-imagen {
+    height: 540px;
+}
+
+/* HABITACIÓN EDWARD */
+.cullen-habitacion {
+    min-height: auto;
+    padding-top: 95px;
+    padding-bottom: 95px;
+}
+
+.cullen-habitacion-imagen {
+    height: 560px;
+}
+
+/* GARAGE */
+.cullen-garage {
+    padding-top: 95px;
+    padding-bottom: 110px;
+}
+
+.cullen-garage-imagen {
+    height: 540px;
+}
+
+/* CIERRE */
+.cullen-cierre {
+    min-height: 60vh;
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+/* ================================================= */
+/* VOLTERRA — HERO                                   */
+/* ================================================= */
+
+.pagina-volterra {
+    background: #090706;
+    color: #f3eee8;
+}
+
+
+/* HERO */
+
+.volterra-hero {
+ height: 480px;
+min-height: 0;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+  padding: 80px 8% 55px;
+
+    overflow: hidden;
+}
+
+
+/* IMAGEN DE FONDO */
+
+.volterra-hero-fondo {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../img/volterra-hero.jpg");
+    background-size: cover;
+    background-position: center;
+
+    transform: scale(1.03);
+
+    animation: volterraZoom 18s ease-in-out infinite alternate;
+
+    z-index: 0;
+}
+
+@keyframes volterraZoom {
+    from {
+        transform: scale(1.03);
+    }
+
+    to {
+        transform: scale(1.09);
+    }
+}
+
+
+/* OSCURECIDO CINEMATOGRÁFICO */
+
+.volterra-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(12, 5, 4, 0.90) 0%,
+            rgba(12, 5, 4, 0.58) 43%,
+            rgba(12, 5, 4, 0.15) 72%,
+            rgba(12, 5, 4, 0.28) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(8, 4, 3, 0.72) 0%,
+            transparent 45%
+        );
+
+    z-index: 1;
+}
+
+
+/* CONTENIDO */
+
+.volterra-hero-contenido {
+    position: relative;
+    z-index: 2;
+
+    max-width: 690px;
+}
+
+.volterra-etiqueta {
+    margin: 18px 0 10px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+
+    color: rgba(171, 56, 48, 0.9);
+}
+
+.volterra-hero h1 {
+    margin: 0 0 28px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(6rem, 12vw, 11rem);
+    font-weight: 500;
+    line-height: 0.75;
+
+    letter-spacing: -0.04em;
+}
+
+.volterra-intro {
+    max-width: 480px;
+
+    margin-bottom: 35px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(255, 255, 255, 0.67);
+}
+
+
+/* COORDENADAS */
+
+.volterra-coordenadas {
+    position: absolute;
+    right: 8%;
+    bottom: 85px;
+
+    z-index: 2;
+
+    display: flex;
+    gap: 25px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+
+    color: rgba(255, 255, 255, 0.42);
+}
+
+
+/* SCROLL */
+
+.volterra-hero .scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 28px;
+
+    z-index: 2;
+
+    transform: translateX(-50%);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .volterra-hero {
+        padding: 120px 8% 90px;
+    }
+
+    .volterra-hero h1 {
+        font-size: clamp(5rem, 22vw, 8rem);
+    }
+
+    .volterra-coordenadas {
+        display: none;
+    }
+
+}
+/* ================================================= */
+/* VOLTERRA — LOS VOLTURI                            */
+/* ================================================= */
+
+.volterra-volturi {
+    padding: 110px 8% 130px;
+    background: #070504;
+}
+
+.volterra-volturi .titulo-seccion {
+    margin-bottom: 70px;
+}
+
+
+/* GRILLA */
+
+.volturi-grid {
+    width: min(1250px, 100%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+
+/* PERSONAJE */
+
+.volturi-miembro {
+    height: 480px;
+    position: relative;
+
+    overflow: hidden;
+    cursor: pointer;
+
+    background: #100b09;
+}
+
+.volturi-miembro img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter:
+        grayscale(35%)
+        brightness(0.55)
+        sepia(10%);
+
+    transition:
+        transform 0.9s ease,
+        filter 0.9s ease;
+}
+
+
+/* SOMBRA */
+
+.volturi-miembro::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        0deg,
+        rgba(8, 2, 2, 0.96) 0%,
+        rgba(8, 2, 2, 0.35) 48%,
+        transparent 75%
+    );
+
+    z-index: 1;
+}
+
+
+/* INFORMACIÓN */
+
+.volturi-info {
+    position: absolute;
+
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 2;
+
+    transform: translateY(58px);
+
+    transition: transform 0.55s ease;
+}
+
+.volturi-info span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+
+    color: #9e3d35;
+}
+
+.volturi-info h3 {
+    margin: 5px 0 14px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+
+.volturi-info p {
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 300;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    opacity: 0;
+
+    transition: opacity 0.45s ease;
+}
+
+
+/* HOVER */
+
+.volturi-miembro:hover img {
+    transform: scale(1.055);
+
+    filter:
+        grayscale(0%)
+        brightness(0.72)
+        sepia(5%);
+}
+
+.volturi-miembro:hover .volturi-info {
+    transform: translateY(0);
+}
+
+.volturi-miembro:hover .volturi-info p {
+    opacity: 1;
+}
+
+
+/* LÍNEA ROJA SUPERIOR */
+
+.volturi-miembro::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: #8e302b;
+
+    z-index: 3;
+
+    transition: width 0.6s ease;
+}
+
+.volturi-miembro:hover::before {
+    width: 100%;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+
+    .volturi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .volturi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .volturi-miembro {
+        height: 460px;
+    }
+
+}
+/* ================================================= */
+/* VOLTERRA — 11:59                                  */
+/* ================================================= */
+
+.volterra-reloj {
+    min-height: 78vh;
+    padding: 95px 8%;
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 75px;
+    align-items: center;
+
+    background: #0b0706;
+}
+
+
+/* IMAGEN */
+
+.volterra-reloj-imagen {
+    position: relative;
+    height: 570px;
+    overflow: hidden;
+}
+
+.volterra-reloj-imagen img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter: brightness(0.62) saturate(0.8);
+
+    transition:
+        transform 1.3s ease,
+        filter 1.3s ease;
+}
+
+.volterra-reloj-imagen:hover img {
+    transform: scale(1.035);
+    filter: brightness(0.78) saturate(0.95);
+}
+
+
+/* SOMBRA SOBRE LA FOTO */
+
+.volterra-reloj-imagen::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent 55%,
+        rgba(11, 7, 6, 0.7) 100%
+    );
+
+    pointer-events: none;
+}
+
+
+/* TEXTO */
+
+.volterra-reloj-texto {
+    max-width: 470px;
+}
+
+.volterra-reloj-texto h2 {
+    margin: 15px 0 28px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 6.5vw, 6.5rem);
+    font-weight: 500;
+    line-height: 0.86;
+}
+
+.volterra-reloj-texto > p:not(.subtitulo) {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* 11:59 */
+
+.volterra-hora {
+    display: block;
+
+    margin-top: 38px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4.5rem, 8vw, 8rem);
+    font-weight: 400;
+    line-height: 1;
+
+    letter-spacing: -0.03em;
+
+    color: #a23b34;
+
+    transition:
+        color 0.5s ease,
+        transform 0.5s ease;
+}
+
+.volterra-reloj:hover .volterra-hora {
+    color: #c75349;
+    transform: translateX(8px);
+}
+
+
+/* PEQUEÑO DETALLE */
+
+.volterra-hora::after {
+    content: " PM";
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.22em;
+
+    color: rgba(255, 255, 255, 0.35);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .volterra-reloj {
+        grid-template-columns: 1fr;
+        gap: 45px;
+
+        padding: 85px 8%;
+    }
+
+    .volterra-reloj-imagen {
+        height: 450px;
+    }
+
+}
+/* ================================================= */
+/* VOLTERRA — CIERRE                                 */
+/* ================================================= */
+
+.volterra-cierre {
+    min-height: 60vh;
+    padding: 90px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(126, 38, 32, 0.10),
+            transparent 42%
+        ),
+        #060403;
+
+    text-align: center;
+}
+
+
+/* LÍNEA ROJA */
+
+.volterra-cierre::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 1px;
+    height: 70px;
+
+    background: linear-gradient(
+        #8e302b,
+        transparent
+    );
+}
+
+
+/* CONTENIDO */
+
+.volterra-cierre-contenido {
+    max-width: 850px;
+    position: relative;
+    z-index: 2;
+}
+
+.volterra-cierre-contenido h2 {
+    margin: 18px 0 40px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 7vw, 7rem);
+    font-weight: 500;
+    line-height: 0.85;
+
+    color: #f1ece7;
+}
+
+
+/* DETALLE DECORATIVO */
+
+.volterra-cierre-contenido::after {
+    content: "VOLTURI";
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: -1;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(8rem, 18vw, 18rem);
+    letter-spacing: 0.08em;
+
+    color: rgba(130, 40, 34, 0.035);
+
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+
+@media (max-width: 800px) {
+
+    .volterra-cierre {
+        min-height: 55vh;
+        padding: 80px 8%;
+    }
+
+}
+/* EVITAR FLASH AL ABRIR LAS PÁGINAS DE MUNDO */
+
+a.lugar:active,
+a.lugar:focus {
+    outline: none;
+}
+
+a.lugar::before,
+a.lugar::after {
+    pointer-events: none;
+}
+/* ================================================= */
+/* FOREVER — BELLA + EDWARD                          */
+/* HERO                                              */
+/* ================================================= */
+
+.pagina-forever {
+    background: #0b0f10;
+    color: #f4f5f3;
+}
+
+
+/* HERO */
+
+.forever-hero {
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 130px 8% 90px;
+
+    overflow: hidden;
+}
+
+
+/* FOTO */
+
+.forever-hero-fondo {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../img/forever-hero.jpg");
+    background-size: cover;
+    background-position: center;
+
+    z-index: 0;
+
+    transform: scale(1.02);
+    animation: foreverZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes foreverZoom {
+
+    from {
+        transform: scale(1.02);
+    }
+
+    to {
+        transform: scale(1.07);
+    }
+
+}
+
+
+/* CAPA CINEMATOGRÁFICA */
+
+.forever-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(6, 11, 13, 0.88) 0%,
+            rgba(8, 13, 15, 0.58) 42%,
+            rgba(8, 13, 15, 0.12) 72%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(5, 9, 11, 0.65) 0%,
+            transparent 48%
+        );
+}
+
+
+/* TEXTO */
+
+.forever-hero-contenido {
+    position: relative;
+    z-index: 2;
+
+    max-width: 720px;
+}
+
+.forever-etiqueta {
+    display: block;
+
+    margin: 17px 0 13px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.56rem;
+    font-weight: 400;
+    letter-spacing: 0.28em;
+
+    color: rgba(215, 225, 225, 0.58);
+}
+
+.forever-hero h1 {
+    margin: 0 0 25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(6.5rem, 13vw, 12rem);
+    font-weight: 400;
+    line-height: 0.78;
+
+    letter-spacing: -0.045em;
+
+    color: #f1f3f1;
+}
+
+.forever-intro {
+    max-width: 420px;
+
+    margin-bottom: 36px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(240, 245, 245, 0.62);
+}
+
+
+/* 2005 — FOREVER */
+
+.forever-fecha {
+    position: absolute;
+
+    right: 7%;
+    bottom: 78px;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.24em;
+
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.forever-fecha div {
+    width: 55px;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+/* SCROLL */
+
+.forever-hero .scroll {
+    position: absolute;
+
+    left: 50%;
+    bottom: 25px;
+
+    z-index: 2;
+
+    transform: translateX(-50%);
+}
+
+
+/* CELULAR */
+
+@media (max-width: 800px) {
+
+    .forever-hero {
+        padding: 120px 8% 90px;
+    }
+
+    .forever-hero h1 {
+        font-size: clamp(5.5rem, 25vw, 8rem);
+    }
+
+    .forever-fecha {
+        display: none;
+    }
+
+}
+/* ================================================= */
+/* FOREVER — 01 TWILIGHT                             */
+/* ================================================= */
+
+.forever-twilight {
+    padding: 120px 8%;
+    background: #e7e9e6;
+    color: #151a1b;
+}
+
+.forever-capitulo {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 0.2fr 0.8fr 1fr;
+    gap: 55px;
+
+    align-items: center;
+}
+
+
+/* 01 */
+
+.forever-capitulo-numero {
+    align-self: start;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+
+    color: rgba(20, 26, 27, 0.4);
+}
+
+
+/* TEXTO */
+
+.forever-capitulo-texto h2 {
+    margin: 15px 0 28px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4.5rem, 7vw, 7rem);
+    font-weight: 500;
+    line-height: 0.82;
+
+    letter-spacing: -0.03em;
+}
+
+.forever-capitulo-texto > p:not(.subtitulo) {
+    max-width: 390px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(20, 26, 27, 0.62);
+}
+
+.forever-lugar {
+    display: block;
+
+    margin-top: 35px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(20, 26, 27, 0.4);
+}
+
+
+/* MANZANA */
+
+.forever-manzana {
+    height: 520px;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #111;
+}
+
+.forever-manzana img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter: saturate(0.85);
+
+    transition: transform 1.2s ease;
+}
+
+.forever-manzana:hover img {
+    transform: scale(1.04);
+}
+
+.forever-manzana span {
+    position: absolute;
+
+    right: 22px;
+    bottom: 20px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.52rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .forever-twilight {
+        padding: 90px 8%;
+    }
+
+    .forever-capitulo {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .forever-manzana {
+        height: 430px;
+    }
+
+}
+/* ================================================= */
+/* FOREVER — CIERRE TWILIGHT / PROM                  */
+/* ================================================= */
+
+.forever-prom {
+    width: min(1350px, 100%);
+    height: 650px;
+
+    margin: 30px auto 0;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #080c0d;
+}
+
+
+/* VIDEO */
+
+.forever-prom-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter:
+        brightness(0.7)
+        saturate(0.72);
+
+    z-index: 0;
+}
+
+
+/* CAPA OSCURA */
+
+.forever-prom-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 9, 10, 0.88) 0%,
+            rgba(5, 9, 10, 0.48) 45%,
+            rgba(5, 9, 10, 0.08) 75%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(5, 9, 10, 0.55),
+            transparent 50%
+        );
+}
+
+
+/* TEXTO */
+
+.forever-prom-contenido {
+    position: absolute;
+
+    left: 7%;
+    bottom: 70px;
+
+    z-index: 2;
+
+    max-width: 520px;
+
+    color: #f2f4f2;
+}
+
+.forever-prom-contenido h2 {
+    margin: 12px 0 24px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 6vw, 6.5rem);
+    font-weight: 400;
+    line-height: 0.82;
+}
+
+.forever-prom-contenido > p:not(.subtitulo) {
+    max-width: 390px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.85;
+
+    color: rgba(255,255,255,0.65);
+}
+
+.forever-prom-contenido > span {
+    display: block;
+
+    margin-top: 30px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.52rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(255,255,255,0.4);
+}
+
+
+@media (max-width: 800px) {
+
+    .forever-prom {
+        height: 570px;
+    }
+
+    .forever-prom-contenido {
+        left: 8%;
+        right: 8%;
+        bottom: 50px;
+    }
+
+}
+/* ================================================= */
+/* FOREVER — MOMENTOS DE TWILIGHT                    */
+/* ================================================= */
+
+.twilight-momentos {
+    width: min(1200px, 100%);
+    margin: 130px auto 0;
+}
+
+.twilight-momento {
+    min-height: 540px;
+    margin-bottom: 130px;
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 75px;
+    align-items: center;
+}
+
+
+/* IMÁGENES */
+
+.twilight-momento-imagen {
+    height: 520px;
+    position: relative;
+    overflow: hidden;
+    background: #101415;
+}
+
+.twilight-momento-imagen img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+
+    filter: saturate(0.72) contrast(1.03);
+
+    transition:
+        transform 1.2s ease,
+        filter 1.2s ease;
+}
+
+.twilight-momento:hover img {
+    transform: scale(1.035);
+    filter: saturate(0.9);
+}
+
+
+/* NÚMEROS */
+
+.momento-numero {
+    position: absolute;
+    top: 20px;
+    left: 22px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* TEXTOS */
+
+.twilight-momento-texto > span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.27em;
+
+    color: rgba(20, 26, 27, 0.42);
+}
+
+.twilight-momento-texto h3 {
+    margin: 12px 0 22px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 6vw, 6rem);
+    font-weight: 500;
+    line-height: 0.83;
+
+    color: #151a1b;
+}
+
+.twilight-momento-texto p {
+    max-width: 390px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(20, 26, 27, 0.6);
+}
+
+
+/* PRADO — INVERTIDO */
+
+.twilight-prado {
+    grid-template-columns: 0.85fr 1.15fr;
+}
+
+
+/* BOTÓN AUDIO */
+
+.forever-audio-btn {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 12px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 40px;
+
+    background: rgba(8, 12, 13, 0.45);
+    backdrop-filter: blur(8px);
+
+    color: white;
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.forever-audio-btn:hover {
+    background: rgba(8, 12, 13, 0.72);
+    transform: translateY(-2px);
+}
+
+.audio-play {
+    font-size: 0.7rem;
+}
+
+.audio-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+}
+
+.audio-texto small {
+    margin-bottom: 2px;
+    font-size: 0.43rem;
+    opacity: 0.55;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .twilight-momento,
+    .twilight-prado {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        margin-bottom: 90px;
+    }
+
+    .twilight-prado .twilight-momento-texto {
+        order: 2;
+    }
+
+    .twilight-momento-imagen {
+        height: 430px;
+    }
+}
+/* ================================================= */
+/* FOREVER — 02 NEW MOON                             */
+/* ================================================= */
+
+.forever-newmoon {
+    padding: 120px 8% 140px;
+    background: #101416;
+    color: #edf0ed;
+}
+
+
+/* INTRO */
+
+.newmoon-entrada {
+    width: min(1200px, 100%);
+    margin: 0 auto 100px;
+
+    display: grid;
+    grid-template-columns: 0.18fr 1fr;
+    gap: 55px;
+}
+
+.newmoon-numero {
+    padding-top: 8px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+
+    color: rgba(255, 255, 255, 0.28);
+}
+
+.newmoon-entrada-texto {
+    max-width: 700px;
+}
+
+.newmoon-entrada-texto h2 {
+    margin: 15px 0 28px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(5rem, 8vw, 8rem);
+    font-weight: 400;
+    line-height: 0.8;
+    letter-spacing: -0.03em;
+}
+
+.newmoon-entrada-texto > p:not(.subtitulo) {
+    max-width: 430px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(255, 255, 255, 0.52);
+}
+
+
+/* RUPTURA */
+
+.newmoon-ruptura {
+    width: min(1250px, 100%);
+    height: 600px;
+
+    margin: 0 auto 140px;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #080b0c;
+}
+
+.newmoon-ruptura > img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter:
+        brightness(0.56)
+        saturate(0.52);
+
+    transition: transform 1.5s ease;
+}
+
+.newmoon-ruptura:hover > img {
+    transform: scale(1.025);
+}
+
+.newmoon-ruptura-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 11, 12, 0.9) 0%,
+            rgba(7, 11, 12, 0.5) 40%,
+            rgba(7, 11, 12, 0.08) 78%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(7, 11, 12, 0.5),
+            transparent 55%
+        );
+}
+
+.newmoon-ruptura-texto {
+    position: absolute;
+
+    left: 6%;
+    bottom: 60px;
+
+    max-width: 430px;
+}
+
+.newmoon-ruptura-texto > span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.52rem;
+    letter-spacing: 0.26em;
+
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.newmoon-ruptura-texto h3 {
+    margin: 10px 0 20px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 7vw, 7rem);
+    font-weight: 400;
+    line-height: 0.83;
+}
+
+.newmoon-ruptura-texto p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.85;
+
+    color: rgba(255, 255, 255, 0.58);
+}
+
+
+/* AUSENCIA */
+
+.newmoon-ausencia {
+    width: min(1150px, 100%);
+    margin: 0 auto 150px;
+
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 90px;
+
+    align-items: center;
+}
+
+.newmoon-bella {
+    height: 560px;
+    overflow: hidden;
+
+    background: #080b0c;
+}
+
+.newmoon-bella img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter:
+        grayscale(35%)
+        brightness(0.6)
+        saturate(0.5);
+}
+
+
+/* OCTOBER / NOVEMBER / DECEMBER / JANUARY */
+
+.newmoon-meses {
+    padding: 25px 0;
+}
+
+.newmoon-mes {
+    padding: 13px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 400;
+    line-height: 1;
+
+    color: rgba(255, 255, 255, 0.14);
+
+    transition:
+        color 0.45s ease,
+        padding-left 0.45s ease;
+}
+
+.newmoon-mes:hover {
+    padding-left: 15px;
+
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.newmoon-libro-nota {
+    display: block;
+    margin-top: 30px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.24em;
+
+    color: rgba(255, 255, 255, 0.25);
+}
+
+
+/* VOLTERRA */
+
+.newmoon-reencuentro {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 75px;
+
+    align-items: center;
+}
+
+.newmoon-reencuentro-texto h3 {
+    margin: 14px 0 25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 6vw, 6rem);
+    font-weight: 400;
+    line-height: 0.84;
+}
+
+.newmoon-reencuentro-texto > p:not(.subtitulo) {
+    max-width: 390px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(255, 255, 255, 0.53);
+}
+
+.newmoon-reencuentro-texto > span {
+    display: block;
+    margin-top: 30px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(255, 255, 255, 0.27);
+}
+
+.newmoon-reencuentro-imagen {
+    height: 540px;
+    overflow: hidden;
+
+    background: #080b0c;
+}
+
+.newmoon-reencuentro-imagen img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter:
+        brightness(0.68)
+        saturate(0.7);
+
+    transition:
+        transform 1.2s ease,
+        filter 1.2s ease;
+}
+
+.newmoon-reencuentro-imagen:hover img {
+    transform: scale(1.035);
+    filter:
+        brightness(0.75)
+        saturate(0.85);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .forever-newmoon {
+        padding: 90px 8% 100px;
+    }
+
+    .newmoon-entrada {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .newmoon-ruptura {
+        height: 500px;
+    }
+
+    .newmoon-ausencia,
+    .newmoon-reencuentro {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .newmoon-bella,
+    .newmoon-reencuentro-imagen {
+        height: 450px;
+    }
+}
+/* ================================================= */
+/* NEW MOON — BELLA → ALICE AUDIO                    */
+/* ================================================= */
+
+.newmoon-audio {
+    margin-top: 45px;
+}
+
+.newmoon-audio-btn {
+    width: 100%;
+    max-width: 470px;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 17px 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: transparent;
+
+    color: #eef0ee;
+    cursor: pointer;
+
+    transition:
+        border-color 0.35s ease,
+        background 0.35s ease;
+}
+
+.newmoon-audio-btn:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.newmoon-audio-icon {
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+
+    font-size: 0.55rem;
+}
+
+.newmoon-audio-info {
+    min-width: 90px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.56rem;
+    letter-spacing: 0.16em;
+}
+
+.newmoon-audio-info small {
+    margin-bottom: 4px;
+
+    font-size: 0.42rem;
+    letter-spacing: 0.2em;
+
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.newmoon-audio-line {
+    height: 1px;
+    flex: 1;
+
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.newmoon-audio-time {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.42rem;
+    letter-spacing: 0.15em;
+
+    color: rgba(255, 255, 255, 0.3);
+}
+/* ================================================= */
+/* FOREVER — 03 ECLIPSE                              */
+/* ================================================= */
+
+.forever-eclipse {
+    position: relative;
+    overflow: hidden;
+    padding: 125px 8% 140px;
+    background: #d8d6d0;
+    color: #171b1b;
+}
+
+
+/* INTRO */
+
+.eclipse-intro {
+    width: min(1200px, 100%);
+    margin: 0 auto 120px;
+
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 0.18fr 1fr;
+    gap: 55px;
+}
+
+.eclipse-numero {
+    padding-top: 10px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+
+    color: rgba(20, 25, 25, 0.35);
+}
+
+.eclipse-intro-texto {
+    position: relative;
+    z-index: 2;
+}
+
+.eclipse-intro-texto h2 {
+    margin: 15px 0 28px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(5rem, 8vw, 8rem);
+    font-weight: 500;
+    line-height: 0.8;
+    letter-spacing: -0.035em;
+}
+
+.eclipse-intro-texto > p:not(.subtitulo) {
+    max-width: 430px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.84rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(20, 25, 25, 0.6);
+}
+
+
+/* ECLIPSE GIGANTE DE FONDO */
+
+.eclipse-palabra {
+    position: absolute;
+    right: -30px;
+    bottom: -25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(8rem, 17vw, 16rem);
+    font-weight: 500;
+    line-height: 0.7;
+
+    color: rgba(20, 25, 25, 0.045);
+
+    pointer-events: none;
+}
+
+
+/* ================================================= */
+/* PRADO                                             */
+/* ================================================= */
+
+.eclipse-prado {
+    width: min(1200px, 100%);
+    margin: 0 auto 150px;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+
+    align-items: center;
+}
+
+.eclipse-prado-imagen {
+    height: 570px;
+    position: relative;
+    overflow: hidden;
+
+    background: #111;
+}
+
+.eclipse-prado-imagen img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter:
+        saturate(0.68)
+        contrast(1.02);
+
+    transition:
+        transform 1.2s ease,
+        filter 1.2s ease;
+}
+
+.eclipse-prado:hover img {
+    transform: scale(1.035);
+    filter: saturate(0.85);
+}
+
+.eclipse-coordenada {
+    position: absolute;
+    left: 25px;
+    bottom: 22px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* TEXTO PRADO */
+
+.eclipse-prado-texto > span:first-child {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.52rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(20, 25, 25, 0.4);
+}
+
+.eclipse-prado-texto h3 {
+    margin: 13px 0 25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 6vw, 6rem);
+    font-weight: 500;
+    line-height: 0.84;
+}
+
+.eclipse-prado-texto p {
+    max-width: 390px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(20, 25, 25, 0.58);
+}
+
+
+/* HUMAN — IMMORTAL */
+
+.eclipse-eleccion {
+    margin-top: 42px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    max-width: 370px;
+}
+
+.eclipse-eleccion span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.2em;
+
+    color: rgba(20, 25, 25, 0.48);
+}
+
+.eclipse-eleccion-linea {
+    height: 1px;
+    flex: 1;
+
+    position: relative;
+
+    background: rgba(20, 25, 25, 0.16);
+}
+
+.eclipse-eleccion-linea::after {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    position: absolute;
+    right: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: #303737;
+}
+
+
+/* ================================================= */
+/* PROPUESTA                                         */
+/* ================================================= */
+
+.eclipse-propuesta {
+    width: min(1100px, 100%);
+    margin: 0 auto 150px;
+
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 85px;
+
+    align-items: center;
+}
+
+.eclipse-propuesta-texto h3 {
+    margin: 14px 0 25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 6vw, 6rem);
+    font-weight: 500;
+    line-height: 0.82;
+}
+
+.eclipse-propuesta-texto > p:not(.subtitulo) {
+    max-width: 350px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(20, 25, 25, 0.58);
+}
+
+.eclipse-anillo-indicacion {
+    display: block;
+    margin-top: 35px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.22em;
+
+    color: rgba(20, 25, 25, 0.35);
+}
+
+
+/* FOTO PROPUESTA */
+
+.eclipse-anillo {
+    height: 580px;
+
+    position: relative;
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background: #111;
+}
+
+.eclipse-anillo > img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter:
+        brightness(0.78)
+        saturate(0.72);
+
+    transition:
+        transform 1.3s ease,
+        filter 1.3s ease;
+}
+
+.eclipse-anillo:hover > img {
+    transform: scale(1.045);
+
+    filter:
+        brightness(0.55)
+        saturate(0.6);
+}
+
+
+/* OSCURECIDO AL HOVER */
+
+.eclipse-anillo-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(7, 10, 10, 0);
+
+    transition: background 0.6s ease;
+}
+
+.eclipse-anillo:hover .eclipse-anillo-overlay {
+    background: rgba(7, 10, 10, 0.42);
+}
+
+
+/* YES / ENGAGED */
+
+.eclipse-anillo-detalle {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    opacity: 0;
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.55s ease,
+        transform 0.55s ease;
+}
+
+.eclipse-anillo:hover .eclipse-anillo-detalle {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.eclipse-anillo-detalle > span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.28em;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.eclipse-anillo-detalle strong {
+    margin: 10px 0 8px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(5rem, 9vw, 9rem);
+    font-weight: 400;
+    line-height: 0.9;
+}
+
+.eclipse-anillo-detalle small {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.3em;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* ================================================= */
+/* MONTAÑA — CIERRE                                  */
+/* ================================================= */
+
+.eclipse-montana {
+    width: min(1300px, 100%);
+    height: 620px;
+
+    margin: 0 auto;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #101414;
+}
+
+.eclipse-montana > img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter:
+        brightness(0.58)
+        saturate(0.6);
+
+    transition: transform 1.5s ease;
+}
+
+.eclipse-montana:hover > img {
+    transform: scale(1.025);
+}
+
+.eclipse-montana-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 11, 12, 0.88) 0%,
+            rgba(8, 11, 12, 0.42) 48%,
+            rgba(8, 11, 12, 0.05) 78%
+        );
+}
+
+.eclipse-montana-texto {
+    position: absolute;
+
+    left: 6%;
+    bottom: 60px;
+
+    max-width: 480px;
+
+    color: #f2f3f1;
+}
+
+.eclipse-montana-texto h3 {
+    margin: 12px 0 22px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 6vw, 6.5rem);
+    font-weight: 400;
+    line-height: 0.83;
+}
+
+.eclipse-montana-texto > p:not(.subtitulo) {
+    max-width: 390px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.85;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.eclipse-montana-texto > span {
+    display: block;
+    margin-top: 28px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(255, 255, 255, 0.35);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .forever-eclipse {
+        padding: 90px 8% 100px;
+    }
+
+    .eclipse-intro {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .eclipse-palabra {
+        display: none;
+    }
+
+    .eclipse-prado,
+    .eclipse-propuesta {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        margin-bottom: 100px;
+    }
+
+    .eclipse-prado-imagen,
+    .eclipse-anillo {
+        height: 450px;
+    }
+
+    .eclipse-montana {
+        height: 540px;
+    }
+
+}
+/* ================================================= */
+/* FOREVER — 04 BREAKING DAWN · PARTE 1              */
+/* ================================================= */
+
+.forever-breaking1 {
+    position: relative;
+    overflow: hidden;
+    padding: 125px 8% 110px;
+    background: #eeece7;
+    color: #181b1a;
+}
+
+
+/* INTRO */
+
+.breaking1-intro {
+    width: min(1200px, 100%);
+    margin: 0 auto 120px;
+
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 0.18fr 1fr;
+    gap: 55px;
+}
+
+.breaking1-numero {
+    padding-top: 10px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+
+    color: rgba(25, 28, 27, 0.3);
+}
+
+.breaking1-intro-texto {
+    position: relative;
+    z-index: 2;
+}
+
+.breaking1-intro-texto h2 {
+    margin: 15px 0 28px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(5rem, 8vw, 8rem);
+    font-weight: 500;
+    line-height: 0.8;
+    letter-spacing: -0.035em;
+}
+
+.breaking1-intro-texto > p:not(.subtitulo) {
+    max-width: 440px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.84rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(25, 28, 27, 0.58);
+}
+
+.breaking1-fondo-palabra {
+    position: absolute;
+    right: -40px;
+    bottom: -20px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(8rem, 17vw, 16rem);
+    line-height: 0.7;
+
+    color: rgba(25, 28, 27, 0.035);
+
+    pointer-events: none;
+}
+
+
+/* ================================================= */
+/* BODA                                              */
+/* ================================================= */
+
+.breaking1-boda {
+    width: min(1280px, 100%);
+    height: 620px;
+
+    margin: 0 auto 145px;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #111;
+}
+
+.breaking1-boda > img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter:
+        brightness(0.72)
+        saturate(0.7);
+
+    transition: transform 1.4s ease;
+}
+
+.breaking1-boda:hover > img {
+    transform: scale(1.025);
+}
+
+.breaking1-boda-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 13, 12, 0.78) 0%,
+            rgba(10, 13, 12, 0.32) 48%,
+            transparent 78%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(10, 13, 12, 0.42),
+            transparent 55%
+        );
+}
+
+.breaking1-boda-texto {
+    position: absolute;
+    left: 6%;
+    bottom: 60px;
+
+    max-width: 470px;
+
+    color: #f7f5ef;
+}
+
+.breaking1-boda-texto > span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(255,255,255,0.55);
+}
+
+.breaking1-boda-texto h3 {
+    margin: 10px 0 20px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4.5rem, 7vw, 7rem);
+    font-weight: 400;
+    line-height: 0.84;
+}
+
+.breaking1-boda-texto p {
+    max-width: 400px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.85;
+
+    color: rgba(255,255,255,0.65);
+}
+
+
+/* ================================================= */
+/* PROMESA                                           */
+/* ================================================= */
+
+.breaking1-promesa {
+    width: min(1120px, 100%);
+    margin: 0 auto 150px;
+
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 85px;
+
+    align-items: center;
+}
+
+.breaking1-promesa-texto h3 {
+    margin: 14px 0 25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 6vw, 6rem);
+    font-weight: 500;
+    line-height: 0.84;
+}
+
+.breaking1-promesa-texto > p:not(.subtitulo) {
+    max-width: 370px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(25,28,27,0.58);
+}
+
+.breaking1-linea {
+    max-width: 340px;
+    margin-top: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.breaking1-linea span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.2em;
+
+    color: rgba(25,28,27,0.42);
+}
+
+.breaking1-linea div {
+    height: 1px;
+    flex: 1;
+
+    background: rgba(25,28,27,0.18);
+}
+
+.breaking1-promesa-imagen {
+    height: 560px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.breaking1-promesa-imagen img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter: saturate(0.75);
+
+    transition: transform 1.2s ease;
+}
+
+.breaking1-promesa-imagen:hover img {
+    transform: scale(1.035);
+}
+
+.breaking1-promesa-imagen > span {
+    position: absolute;
+    right: 22px;
+    bottom: 20px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.24em;
+
+    color: rgba(255,255,255,0.7);
+}
+
+
+/* ================================================= */
+/* ISLA ESME                                         */
+/* ================================================= */
+
+.breaking1-isla {
+    width: min(1180px, 100%);
+    margin: 0 auto 150px;
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 80px;
+
+    align-items: center;
+}
+
+.breaking1-isla-imagen {
+    height: 540px;
+    overflow: hidden;
+}
+
+.breaking1-isla-imagen img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter:
+        brightness(0.88)
+        saturate(0.72);
+
+    transition:
+        transform 1.3s ease,
+        filter 1.3s ease;
+}
+
+.breaking1-isla:hover img {
+    transform: scale(1.03);
+    filter:
+        brightness(0.95)
+        saturate(0.88);
+}
+
+.breaking1-isla-texto h3 {
+    margin: 13px 0 24px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 6vw, 6rem);
+    font-weight: 500;
+    line-height: 0.83;
+}
+
+.breaking1-isla-texto > p:not(.subtitulo) {
+    max-width: 380px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(25,28,27,0.58);
+}
+
+.breaking1-isla-texto > span {
+    display: block;
+    margin-top: 30px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.23em;
+
+    color: rgba(25,28,27,0.35);
+}
+
+
+/* ================================================= */
+/* AJEDREZ                                           */
+/* ================================================= */
+
+.breaking1-ajedrez {
+    width: min(1100px, 100%);
+    margin: 0 auto 130px;
+
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 85px;
+
+    align-items: center;
+}
+
+.breaking1-ajedrez-titulo > span:first-child {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(25,28,27,0.4);
+}
+
+.breaking1-ajedrez-titulo h3 {
+    margin: 12px 0 24px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 6vw, 6rem);
+    font-weight: 500;
+    line-height: 0.82;
+}
+
+.breaking1-ajedrez-titulo p {
+    max-width: 350px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(25,28,27,0.58);
+}
+
+.breaking1-ajedrez-indicacion {
+    display: block;
+    margin-top: 35px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.47rem;
+    letter-spacing: 0.2em;
+
+    color: rgba(25,28,27,0.35);
+}
+
+
+/* FOTO INTERACTIVA */
+
+.breaking1-ajedrez-imagen {
+    height: 560px;
+
+    position: relative;
+    overflow: hidden;
+
+    cursor: pointer;
+    background: #111;
+}
+
+.breaking1-ajedrez-imagen > img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter:
+        brightness(0.82)
+        saturate(0.65);
+
+    transition:
+        transform 1.3s ease,
+        filter 1.3s ease;
+}
+
+.breaking1-ajedrez-imagen:hover > img {
+    transform: scale(1.05);
+
+    filter:
+        brightness(0.48)
+        saturate(0.45);
+}
+
+.breaking1-ajedrez-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(15,10,10,0);
+
+    transition: background 0.6s ease;
+}
+
+.breaking1-ajedrez-imagen:hover .breaking1-ajedrez-overlay {
+    background: rgba(15,8,8,0.42);
+}
+
+
+/* REVEAL */
+
+.breaking1-ajedrez-reveal {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+
+    opacity: 0;
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.55s ease,
+        transform 0.55s ease;
+}
+
+.breaking1-ajedrez-imagen:hover .breaking1-ajedrez-reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.breaking1-ajedrez-reveal > span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.3em;
+
+    color: rgba(255,255,255,0.6);
+}
+
+.breaking1-ajedrez-pieza {
+    margin: 5px 0 -8px;
+
+    font-size: 7rem;
+    line-height: 1;
+}
+
+.breaking1-ajedrez-reveal strong {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 4.5rem;
+    font-weight: 400;
+}
+
+.breaking1-ajedrez-reveal small {
+    margin-top: 5px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.45rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(255,255,255,0.5);
+}
+
+
+/* ================================================= */
+/* BELLA SWAN → BELLA CULLEN                         */
+/* ================================================= */
+
+.breaking1-cierre {
+    width: min(900px, 100%);
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.breaking1-cierre span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.28em;
+
+    color: rgba(25,28,27,0.4);
+}
+
+.breaking1-cierre div {
+    width: 130px;
+    height: 1px;
+
+    position: relative;
+
+    background: rgba(25,28,27,0.2);
+}
+
+.breaking1-cierre div::after {
+    content: "";
+
+    position: absolute;
+    right: 0;
+    top: 50%;
+
+    width: 6px;
+    height: 6px;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: #6f1f22;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .forever-breaking1 {
+        padding: 90px 8%;
+    }
+
+    .breaking1-intro {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .breaking1-fondo-palabra {
+        display: none;
+    }
+
+    .breaking1-boda {
+        height: 520px;
+    }
+
+    .breaking1-promesa,
+    .breaking1-isla,
+    .breaking1-ajedrez {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        margin-bottom: 100px;
+    }
+
+    .breaking1-promesa-imagen,
+    .breaking1-isla-imagen,
+    .breaking1-ajedrez-imagen {
+        height: 450px;
+    }
+
+    .breaking1-cierre {
+        gap: 12px;
+    }
+
+    .breaking1-cierre div {
+        width: 60px;
+    }
+}
+/* ================================================= */
+/* BREAKING DAWN I — EMBARAZO / RENESMEE             */
+/* ================================================= */
+
+.breaking1-cambio {
+    width: min(1180px, 100%);
+    margin: 180px auto 150px;
+}
+
+.breaking1-cambio-intro {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    gap: 50px;
+    margin-bottom: 100px;
+}
+
+.breaking1-cambio-numero {
+    padding-top: 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1rem;
+    letter-spacing: .2em;
+    color: rgba(25, 28, 27, .28);
+}
+
+.breaking1-cambio-intro h3 {
+    margin: 12px 0 25px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4.5rem, 7vw, 7rem);
+    font-weight: 500;
+    line-height: .82;
+}
+
+.breaking1-cambio-intro p:not(.subtitulo) {
+    max-width: 420px;
+    font-family: "Montserrat", sans-serif;
+    font-size: .82rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(25, 28, 27, .58);
+}
+
+
+/* EMBARAZO */
+
+.breaking1-embarazo {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 85px;
+    align-items: center;
+    margin-bottom: 150px;
+}
+
+.breaking1-embarazo-imagen {
+    position: relative;
+    height: 570px;
+    overflow: hidden;
+}
+
+.breaking1-embarazo-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    filter: saturate(.6) brightness(.83);
+    transition: transform 1.2s ease, filter 1.2s ease;
+}
+
+.breaking1-embarazo:hover img {
+    transform: scale(1.025);
+    filter: saturate(.75) brightness(.9);
+}
+
+.breaking1-embarazo-imagen > span {
+    position: absolute;
+    left: 25px;
+    bottom: 22px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: .48rem;
+    letter-spacing: .25em;
+    color: rgba(255,255,255,.7);
+}
+
+.breaking1-embarazo-texto h3 {
+    margin: 12px 0 23px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 6vw, 6rem);
+    font-weight: 500;
+    line-height: .85;
+}
+
+.breaking1-embarazo-texto > p:not(.subtitulo) {
+    max-width: 370px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: .82rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(25,28,27,.58);
+}
+
+
+/* LATIDO */
+
+.breaking1-latido {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-top: 38px;
+}
+
+.breaking1-latido > span {
+    width: 48px;
+    height: 1px;
+    position: relative;
+    background: rgba(95,25,28,.45);
+}
+
+.breaking1-latido > span::after {
+    content: "";
+    position: absolute;
+
+    right: -2px;
+    top: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+    background: #6f1f22;
+
+    transform: translateY(-50%);
+    animation: foreverLatido 1.25s ease-in-out infinite;
+}
+
+@keyframes foreverLatido {
+    0%, 100% {
+        transform: translateY(-50%) scale(1);
+        opacity: .45;
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1.7);
+        opacity: 1;
+    }
+}
+
+.breaking1-latido small {
+    font-family: "Montserrat", sans-serif;
+    font-size: .46rem;
+    letter-spacing: .22em;
+    color: rgba(25,28,27,.4);
+}
+
+
+/* ================================================= */
+/* RENESMEE                                          */
+/* ================================================= */
+
+.breaking1-renesmee {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 90px;
+    align-items: center;
+}
+
+.breaking1-renesmee-texto > span {
+    font-family: "Montserrat", sans-serif;
+    font-size: .5rem;
+    letter-spacing: .27em;
+    color: #762a2d;
+}
+
+.breaking1-renesmee-texto h3 {
+    margin: 13px 0 24px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 6vw, 6rem);
+    font-weight: 500;
+    line-height: .84;
+}
+
+.breaking1-renesmee-texto p {
+    max-width: 365px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: .82rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(25,28,27,.58);
+}
+
+.breaking1-renesmee-imagen {
+    height: 520px;
+    overflow: hidden;
+}
+
+.breaking1-renesmee-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    filter: saturate(.55) brightness(.78);
+
+    transition:
+        transform 1.3s ease,
+        filter 1.3s ease;
+}
+
+.breaking1-renesmee:hover img {
+    transform: scale(1.03);
+    filter: saturate(.7) brightness(.86);
+}
+
+
+/* ================================================= */
+/* TRANSFORMACIÓN DE BELLA                           */
+/* ================================================= */
+
+.breaking1-transformacion {
+    width: calc(100% + 16vw);
+    height: 760px;
+
+    position: relative;
+    left: -8vw;
+
+    margin: 190px 0 110px;
+
+    overflow: hidden;
+    cursor: pointer;
+    background: #050606;
+}
+
+.breaking1-transformacion > img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+    object-position: center;
+
+    filter:
+        grayscale(1)
+        brightness(.28)
+        contrast(1.05);
+
+    transform: scale(1.02);
+
+    transition:
+        filter 1.5s ease,
+        transform 2s ease;
+}
+
+.breaking1-transformacion-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,4,4,.88) 0%,
+            rgba(3,4,4,.52) 38%,
+            rgba(3,4,4,.18) 70%,
+            rgba(3,4,4,.4) 100%
+        );
+
+    transition: background 1.3s ease;
+}
+
+
+/* ANTES */
+
+.breaking1-transformacion-antes {
+    position: absolute;
+    left: 8%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #f4f3ef;
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.breaking1-transformacion-antes > span {
+    font-family: "Montserrat", sans-serif;
+    font-size: .5rem;
+    letter-spacing: .28em;
+    color: rgba(255,255,255,.48);
+}
+
+.breaking1-transformacion-antes h3 {
+    margin: 15px 0 28px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(5rem, 8vw, 8rem);
+    font-weight: 400;
+    line-height: .8;
+}
+
+.breaking1-transformacion-antes p {
+    font-family: "Montserrat", sans-serif;
+    font-size: .47rem;
+    letter-spacing: .23em;
+    color: rgba(255,255,255,.38);
+}
+
+
+/* DESPUÉS */
+
+.breaking1-transformacion-despues {
+    position: absolute;
+
+    right: 9%;
+    top: 50%;
+
+    transform: translateY(-42%);
+
+    text-align: right;
+    color: #f5f3ef;
+
+    opacity: 0;
+
+    transition:
+        opacity 1s ease .25s,
+        transform 1s ease .25s;
+}
+
+.breaking1-transformacion-despues > span {
+    font-family: "Montserrat", sans-serif;
+    font-size: .5rem;
+    letter-spacing: .28em;
+    color: rgba(150,55,58,.9);
+}
+
+.breaking1-transformacion-despues h3 {
+    margin: 14px 0 25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(5rem, 8vw, 8rem);
+    font-weight: 400;
+    line-height: .8;
+}
+
+.breaking1-transformacion-despues p {
+    font-family: "Montserrat", sans-serif;
+    font-size: .5rem;
+    letter-spacing: .35em;
+    color: rgba(255,255,255,.55);
+}
+
+
+/* HOVER — DESPERTAR */
+
+.breaking1-transformacion:hover > img {
+    filter:
+        grayscale(0)
+        brightness(.68)
+        contrast(1.08)
+        saturate(.9);
+
+    transform: scale(1.055);
+}
+
+.breaking1-transformacion:hover
+.breaking1-transformacion-overlay {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,4,4,.45),
+            rgba(3,4,4,.08) 55%,
+            rgba(30,5,7,.3)
+        );
+}
+
+.breaking1-transformacion:hover
+.breaking1-transformacion-antes {
+    opacity: 0;
+    transform: translate(-25px, -50%);
+}
+
+.breaking1-transformacion:hover
+.breaking1-transformacion-despues {
+    opacity: 1;
+    transform: translateY(-50%);
+}
+
+
+/* PULSO ROJO */
+
+.breaking1-pulso {
+    position: absolute;
+
+    left: 50%;
+    bottom: 45px;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+    background: #8a2429;
+
+    transform: translateX(-50%);
+
+    box-shadow: 0 0 0 0 rgba(138,36,41,.5);
+
+    animation: despertarPulso 2s infinite;
+}
+
+@keyframes despertarPulso {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(138,36,41,.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 18px rgba(138,36,41,0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(138,36,41,0);
+    }
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .breaking1-cambio {
+        margin-top: 110px;
+    }
+
+    .breaking1-cambio-intro,
+    .breaking1-embarazo,
+    .breaking1-renesmee {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .breaking1-embarazo-imagen,
+    .breaking1-renesmee-imagen {
+        height: 450px;
+    }
+
+    .breaking1-transformacion {
+        height: 620px;
+        margin-top: 120px;
+    }
+
+    .breaking1-transformacion-antes,
+    .breaking1-transformacion-despues {
+        left: 8%;
+        right: 8%;
+        text-align: left;
+    }
+}
+/* ================================================= */
+/* FOREVER — 05 BREAKING DAWN · PARTE 2              */
+/* ================================================= */
+
+.forever-breaking2 {
+    position: relative;
+    overflow: hidden;
+    padding: 140px 8% 130px;
+
+    background:
+        linear-gradient(180deg, #101516 0%, #0a0e0f 55%, #080b0c 100%);
+
+    color: #f2f3f1;
+}
+
+
+/* INTRO */
+
+.breaking2-intro {
+    width: min(1200px, 100%);
+    margin: 0 auto 140px;
+
+    position: relative;
+
+    display: grid;
+    grid-template-columns: .18fr 1fr;
+    gap: 55px;
+}
+
+.breaking2-numero {
+    padding-top: 10px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1rem;
+    letter-spacing: .22em;
+
+    color: rgba(255,255,255,.25);
+}
+
+.breaking2-intro-texto {
+    position: relative;
+    z-index: 2;
+}
+
+.breaking2-intro-texto h2 {
+    margin: 15px 0 28px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(5rem, 8vw, 8rem);
+    font-weight: 400;
+    line-height: .8;
+    letter-spacing: -.035em;
+}
+
+.breaking2-intro-texto > p:not(.subtitulo) {
+    max-width: 440px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: .82rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(255,255,255,.52);
+}
+
+.breaking2-fondo-palabra {
+    position: absolute;
+    right: -35px;
+    bottom: -25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(8rem, 17vw, 16rem);
+    line-height: .7;
+
+    color: rgba(255,255,255,.025);
+
+    pointer-events: none;
+}
+
+
+/* ================================================= */
+/* BELLA VAMPIRA                                     */
+/* ================================================= */
+
+.breaking2-bella {
+    width: min(1150px, 100%);
+    margin: 0 auto 170px;
+
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 85px;
+
+    align-items: center;
+}
+
+.breaking2-bella-imagen {
+    height: 620px;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #050707;
+}
+
+.breaking2-bella-imagen img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter:
+        brightness(.68)
+        saturate(.65)
+        contrast(1.05);
+
+    transition:
+        transform 1.5s ease,
+        filter 1.5s ease;
+}
+
+.breaking2-bella:hover .breaking2-bella-imagen img {
+    transform: scale(1.035);
+
+    filter:
+        brightness(.83)
+        saturate(.9)
+        contrast(1.08);
+}
+
+.breaking2-bella-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(5,8,8,.55),
+            transparent 55%
+        );
+}
+
+.breaking2-bella-etiqueta {
+    position: absolute;
+    left: 25px;
+    bottom: 22px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: .48rem;
+    letter-spacing: .27em;
+
+    color: rgba(255,255,255,.62);
+}
+
+.breaking2-bella-texto > span {
+    font-family: "Montserrat", sans-serif;
+    font-size: .5rem;
+    letter-spacing: .28em;
+
+    color: #8d3438;
+}
+
+.breaking2-bella-texto h3 {
+    margin: 13px 0 26px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4.5rem, 6.5vw, 6.5rem);
+    font-weight: 400;
+    line-height: .82;
+}
+
+.breaking2-bella-texto > p {
+    max-width: 370px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: .82rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(255,255,255,.52);
+}
+
+
+/* SENTIDOS */
+
+.breaking2-sentidos {
+    display: flex;
+    gap: 25px;
+
+    margin-top: 40px;
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.breaking2-sentidos span {
+    position: relative;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: .48rem;
+    letter-spacing: .24em;
+
+    color: rgba(255,255,255,.35);
+
+    transition:
+        color .4s ease,
+        transform .4s ease;
+}
+
+.breaking2-sentidos span:hover {
+    color: #a7474b;
+    transform: translateY(-3px);
+}
+
+
+/* ================================================= */
+/* FAMILIA                                           */
+/* ================================================= */
+
+.breaking2-familia {
+    width: min(1280px, 100%);
+    height: 660px;
+
+    margin: 0 auto 175px;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #050707;
+}
+
+.breaking2-familia > img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter:
+        brightness(.62)
+        saturate(.58);
+
+    transition:
+        transform 1.6s ease,
+        filter 1.6s ease;
+}
+
+.breaking2-familia:hover > img {
+    transform: scale(1.025);
+
+    filter:
+        brightness(.72)
+        saturate(.7);
+}
+
+.breaking2-familia-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,8,9,.85) 0%,
+            rgba(5,8,9,.48) 40%,
+            transparent 76%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(5,8,9,.5),
+            transparent 55%
+        );
+}
+
+.breaking2-familia-texto {
+    position: absolute;
+    left: 6%;
+    bottom: 65px;
+
+    max-width: 480px;
+}
+
+.breaking2-familia-texto h3 {
+    margin: 12px 0 22px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4.5rem, 7vw, 7rem);
+    font-weight: 400;
+    line-height: .82;
+}
+
+.breaking2-familia-texto > p:not(.subtitulo) {
+    max-width: 400px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: .8rem;
+    font-weight: 300;
+    line-height: 1.85;
+
+    color: rgba(255,255,255,.57);
+}
+
+.breaking2-familia-fecha {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1rem;
+    letter-spacing: .18em;
+
+    color: rgba(255,255,255,.35);
+}
+
+
+/* ================================================= */
+/* HOGAR                                             */
+/* ================================================= */
+
+.breaking2-hogar {
+    width: min(1120px, 100%);
+    margin: 0 auto 180px;
+
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 90px;
+
+    align-items: center;
+}
+
+.breaking2-hogar-texto h3 {
+    margin: 13px 0 25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 6vw, 6rem);
+    font-weight: 400;
+    line-height: .84;
+}
+
+.breaking2-hogar-texto > p:not(.subtitulo) {
+    max-width: 365px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: .82rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(255,255,255,.5);
+}
+
+.breaking2-linea {
+    max-width: 350px;
+
+    margin-top: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.breaking2-linea span {
+    font-family: "Montserrat", sans-serif;
+    font-size: .46rem;
+    letter-spacing: .22em;
+
+    color: rgba(255,255,255,.35);
+}
+
+.breaking2-linea span:last-child {
+    color: #984044;
+}
+
+.breaking2-linea div {
+    height: 1px;
+    flex: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.15),
+            rgba(125,39,43,.65)
+        );
+}
+
+.breaking2-hogar-imagen {
+    height: 570px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.breaking2-hogar-imagen img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    filter:
+        brightness(.7)
+        saturate(.55);
+
+    transition:
+        transform 1.4s ease,
+        filter 1.4s ease;
+}
+
+.breaking2-hogar:hover img {
+    transform: scale(1.03);
+
+    filter:
+        brightness(.8)
+        saturate(.72);
+}
+
+.breaking2-hogar-imagen > span {
+    position: absolute;
+    left: 24px;
+    bottom: 22px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: .47rem;
+    letter-spacing: .24em;
+
+    color: rgba(255,255,255,.6);
+}
+
+
+/* ================================================= */
+/* PRADO FINAL                                       */
+/* ================================================= */
+
+.breaking2-prado {
+    width: calc(100% + 16vw);
+    height: 780px;
+
+    position: relative;
+    left: -8vw;
+
+    margin: 190px 0 0;
+
+    overflow: hidden;
+
+    background: #050707;
+}
+
+.breaking2-prado > img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+    object-position: center;
+
+    filter:
+        brightness(.58)
+        saturate(.52);
+
+    transform: scale(1.02);
+
+    transition:
+        transform 2.5s ease,
+        filter 2s ease;
+}
+
+.breaking2-prado:hover > img {
+    transform: scale(1.055);
+
+    filter:
+        brightness(.72)
+        saturate(.72);
+}
+
+.breaking2-prado-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4,7,8,.76) 0%,
+            rgba(4,7,8,.32) 48%,
+            rgba(4,7,8,.12) 75%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(4,7,8,.55),
+            transparent 55%
+        );
+}
+
+.breaking2-prado-texto {
+    position: absolute;
+    left: 8%;
+    top: 50%;
+
+    max-width: 500px;
+
+    transform: translateY(-50%);
+}
+
+.breaking2-prado-texto > span {
+    font-family: "Montserrat", sans-serif;
+    font-size: .5rem;
+    letter-spacing: .3em;
+
+    color: rgba(255,255,255,.48);
+}
+
+.breaking2-prado-texto h3 {
+    margin: 14px 0 25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(5rem, 8vw, 8rem);
+    font-weight: 400;
+    line-height: .8;
+}
+
+.breaking2-prado-texto p {
+    max-width: 400px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: .8rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(255,255,255,.55);
+}
+
+.breaking2-prado-final {
+    position: absolute;
+
+    right: 7%;
+    bottom: 45px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.breaking2-prado-final span {
+    font-family: "Montserrat", sans-serif;
+    font-size: .47rem;
+    letter-spacing: .2em;
+
+    color: rgba(255,255,255,.42);
+}
+
+.breaking2-prado-final div {
+    width: 100px;
+    height: 1px;
+
+    background: rgba(255,255,255,.2);
+}
+
+
+/* ================================================= */
+/* TRANSICIÓN A LOS RECUERDOS                        */
+/* ================================================= */
+
+.breaking2-transicion {
+    width: min(900px, 100%);
+
+    margin: 0 auto;
+    padding: 160px 0 70px;
+
+    text-align: center;
+}
+
+.breaking2-transicion > span:first-child {
+    font-family: "Montserrat", sans-serif;
+    font-size: .48rem;
+    letter-spacing: .32em;
+
+    color: rgba(255,255,255,.35);
+}
+
+.breaking2-transicion h3 {
+    margin: 20px 0 30px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4.5rem, 7vw, 7rem);
+    font-weight: 400;
+    line-height: .84;
+}
+
+.breaking2-transicion p {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: .82rem;
+    font-weight: 300;
+    line-height: 1.9;
+
+    color: rgba(255,255,255,.48);
+}
+
+.breaking2-transicion-linea {
+    width: 1px;
+    height: 80px;
+
+    margin: 45px auto 25px;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.25),
+            transparent
+        );
+}
+
+.breaking2-siguiente {
+    display: block;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: .48rem;
+    letter-spacing: .28em;
+
+    color: #914044;
+
+    animation: recuerdosMovimiento 2s ease-in-out infinite;
+}
+
+@keyframes recuerdosMovimiento {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .forever-breaking2 {
+        padding: 100px 8%;
+    }
+
+    .breaking2-intro,
+    .breaking2-bella,
+    .breaking2-hogar {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .breaking2-fondo-palabra {
+        display: none;
+    }
+
+    .breaking2-bella-imagen,
+    .breaking2-hogar-imagen {
+        height: 470px;
+    }
+
+    .breaking2-familia {
+        height: 570px;
+    }
+
+    .breaking2-prado {
+        height: 680px;
+    }
+
+    .breaking2-prado-texto {
+        left: 8%;
+        right: 8%;
+    }
+}
+/* ================================================= */
+/* FOREVER — RECUERDOS DE BELLA                      */
+/* ================================================= */
+
+.forever-recuerdos {
+    position: relative;
+    width: calc(100% + 16vw);
+    left: -8vw;
+
+    margin-top: 40px;
+
+    background: #050708;
+    overflow: hidden;
+}
+
+
+/* PEQUEÑA ENTRADA */
+
+.forever-recuerdos-entrada {
+    padding: 90px 8% 55px;
+
+    text-align: center;
+}
+
+.forever-recuerdos-entrada span {
+    font-family: "Montserrat", sans-serif;
+    font-size: .48rem;
+    letter-spacing: .32em;
+
+    color: rgba(255,255,255,.35);
+}
+
+.forever-recuerdos-entrada p {
+    margin-top: 14px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 400;
+
+    color: rgba(255,255,255,.72);
+}
+
+
+/* VIDEO */
+
+.forever-recuerdos-video {
+    position: relative;
+
+    width: 100%;
+    height: min(82vh, 780px);
+
+    overflow: hidden;
+
+    background: #000;
+}
+
+.forever-recuerdos-video video {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    filter:
+        brightness(.78)
+        contrast(1.04)
+        saturate(.82);
+}
+
+
+/* SOMBRAS PARA INTEGRAR EL VIDEO */
+
+.forever-recuerdos-sombra {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            #050708 0%,
+            transparent 13%,
+            transparent 75%,
+            #050708 100%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(5,7,8,.25),
+            transparent 25%,
+            transparent 75%,
+            rgba(5,7,8,.25)
+        );
+}
+
+
+/* ================================================= */
+/* CIERRE FINAL                                       */
+/* ================================================= */
+
+.forever-final {
+    position: relative;
+
+    min-height: 600px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 110px 8%;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(92,108,112,.10),
+            transparent 48%
+        ),
+        #050708;
+}
+
+
+.forever-final-nombres {
+    margin-bottom: 24px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: .5rem;
+    letter-spacing: .38em;
+
+    color: rgba(255,255,255,.38);
+}
+
+
+.forever-final h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(6rem, 12vw, 11rem);
+    font-weight: 400;
+    font-style: italic;
+
+    line-height: .85;
+    letter-spacing: -.04em;
+
+    color: #f1f0ec;
+
+    text-shadow:
+        0 0 45px rgba(255,255,255,.06);
+}
+
+
+/* ∞ — ∞ */
+
+.forever-final-tiempo {
+    width: min(360px, 80%);
+
+    margin-top: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.forever-final-tiempo span {
+    font-family: "Montserrat", sans-serif;
+    font-size: .5rem;
+    letter-spacing: .25em;
+
+    color: rgba(255,255,255,.35);
+}
+
+.forever-final-tiempo span:last-child {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.5rem;
+
+    color: rgba(255,255,255,.65);
+}
+
+.forever-final-tiempo div {
+    flex: 1;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.22),
+            transparent
+        );
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .forever-recuerdos-video {
+        height: 65vh;
+    }
+
+    .forever-recuerdos-entrada {
+        padding: 70px 8% 40px;
+    }
+
+    .forever-final {
+        min-height: 500px;
+        padding: 90px 8%;
+    }
+
+    .forever-final h2 {
+        font-size: clamp(4.8rem, 18vw, 7rem);
+    }
+}
+/* ================================================= */
+/* GALERÍA — DETRÁS DE TWILIGHT                      */
+/* ================================================= */
+
+.pagina-galeria {
+    background: #0a0c0d;
+    color: #f1f0ec;
+}
+
+
+/* HERO */
+
+.galeria-hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 8% 10vh;
+    background: #080a0b;
+}
+
+.galeria-hero-fondo {
+    position: absolute;
+    inset: 0;
+}
+
+.galeria-hero-fondo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%) brightness(.48) contrast(1.08);
+    transform: scale(1.02);
+    transition: transform 8s ease;
+}
+
+.galeria-hero:hover .galeria-hero-fondo img {
+    transform: scale(1.07);
+}
+
+.galeria-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,7,8,.85) 0%,
+            rgba(5,7,8,.48) 48%,
+            rgba(5,7,8,.15) 80%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(5,7,8,.85) 0%,
+            transparent 55%
+        );
+}
+
+.galeria-hero-contenido {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+
+.galeria-kicker {
+    margin-bottom: 25px;
+    font-family: "Montserrat", sans-serif;
+    font-size: .5rem;
+    letter-spacing: .34em;
+    color: rgba(255,255,255,.48);
+}
+
+.galeria-hero h1 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(6rem, 11vw, 11rem);
+    font-weight: 400;
+    line-height: .72;
+    letter-spacing: -.045em;
+}
+
+.galeria-hero h1 em {
+    font-weight: 400;
+    color: rgba(255,255,255,.7);
+}
+
+.galeria-hero-texto {
+    max-width: 420px;
+    margin: 45px 0 0 7px;
+    font-family: "Montserrat", sans-serif;
+    font-size: .78rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(255,255,255,.55);
+}
+
+.galeria-scroll {
+    position: absolute;
+    z-index: 2;
+    right: 6%;
+    bottom: 9%;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transform: rotate(90deg);
+    transform-origin: right center;
+}
+
+.galeria-scroll span {
+    font-family: "Montserrat", sans-serif;
+    font-size: .43rem;
+    letter-spacing: .28em;
+    color: rgba(255,255,255,.38);
+}
+
+.galeria-scroll div {
+    width: 70px;
+    height: 1px;
+    background: rgba(255,255,255,.25);
+}
+
+
+/* INTRO */
+
+.galeria-intro {
+    width: min(1100px, 84%);
+    margin: 0 auto;
+    padding: 150px 0 130px;
+    display: grid;
+    grid-template-columns: .2fr 1fr;
+    gap: 50px;
+}
+
+.galeria-intro-numero {
+    padding-top: 12px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1rem;
+    letter-spacing: .2em;
+    color: rgba(255,255,255,.22);
+}
+
+.galeria-intro-texto > p {
+    margin: 0 0 18px;
+    font-family: "Montserrat", sans-serif;
+    font-size: .48rem;
+    letter-spacing: .3em;
+    color: #777f80;
+}
+
+.galeria-intro-texto h2 {
+    margin: 0 0 35px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4.5rem, 7vw, 7rem);
+    font-weight: 400;
+    line-height: .82;
+    letter-spacing: -.025em;
+}
+
+.galeria-intro-texto > span {
+    display: block;
+    max-width: 480px;
+    font-family: "Montserrat", sans-serif;
+    font-size: .78rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(255,255,255,.48);
+}
+
+
+/* FILTROS */
+
+.galeria-filtros {
+    width: min(1200px, 88%);
+    margin: 0 auto 60px;
+    padding: 22px 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    border-top: 1px solid rgba(255,255,255,.1);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.filtro-galeria {
+    position: relative;
+    padding: 7px 0;
+    border: 0;
+    background: transparent;
+    font-family: "Montserrat", sans-serif;
+    font-size: .48rem;
+    letter-spacing: .25em;
+    color: rgba(255,255,255,.35);
+    cursor: pointer;
+    transition: color .3s ease;
+}
+
+.filtro-galeria:hover,
+.filtro-galeria.activo {
+    color: #fff;
+}
+
+.filtro-galeria.activo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: .25em;
+    bottom: 0;
+    height: 1px;
+    background: #fff;
+}
+
+
+/* MOSAICO */
+
+.galeria-archivo {
+    width: min(1250px, 90%);
+    margin: 0 auto;
+    padding-bottom: 160px;
+}
+
+.galeria-mosaico {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-flow: dense;
+    gap: 18px;
+}
+
+.foto-archivo {
+    position: relative;
+    grid-column: span 4;
+    height: 390px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #111;
+}
+
+.foto-archivo.foto-grande {
+    grid-column: span 8;
+    height: 540px;
+}
+
+.foto-archivo.foto-vertical {
+    grid-column: span 4;
+    height: 540px;
+}
+
+.foto-archivo.foto-ancha {
+    grid-column: span 8;
+    height: 400px;
+}
+
+.foto-archivo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    filter: grayscale(88%) brightness(.7) contrast(1.05);
+    transition:
+        transform 1.1s cubic-bezier(.2,.7,.2,1),
+        filter .8s ease;
+}
+
+.foto-archivo:hover img {
+    transform: scale(1.045);
+    filter: grayscale(25%) brightness(.82) contrast(1.03);
+}
+
+.foto-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background:
+        linear-gradient(
+            0deg,
+            rgba(5,7,8,.88) 0%,
+            rgba(5,7,8,.18) 50%,
+            transparent 75%
+        );
+}
+
+.foto-overlay span {
+    margin-bottom: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: .43rem;
+    letter-spacing: .25em;
+    color: rgba(255,255,255,.48);
+}
+
+.foto-overlay h3 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.1rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+
+/* BLOQUE EDITORIAL ENTRE FOTOS */
+
+.galeria-frase {
+    grid-column: span 4;
+    min-height: 400px;
+    padding: 50px 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+.galeria-frase > span {
+    font-family: "Montserrat", sans-serif;
+    font-size: .42rem;
+    letter-spacing: .3em;
+    color: rgba(255,255,255,.32);
+}
+
+.galeria-frase blockquote {
+    margin: 32px 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.6rem;
+    font-weight: 400;
+    font-style: italic;
+    line-height: .98;
+    color: rgba(255,255,255,.82);
+}
+
+.galeria-frase div {
+    width: 60px;
+    height: 1px;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,.25);
+}
+
+.galeria-frase small {
+    font-family: "Montserrat", sans-serif;
+    font-size: .43rem;
+    letter-spacing: .25em;
+    color: rgba(255,255,255,.3);
+}
+
+
+/* CIERRE */
+
+.galeria-cierre {
+    min-height: 720px;
+    padding: 130px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(96,110,113,.12),
+            transparent 45%
+        ),
+        #07090a;
+}
+
+.galeria-cierre p {
+    margin-bottom: 30px;
+    font-family: "Montserrat", sans-serif;
+    font-size: .48rem;
+    letter-spacing: .35em;
+    color: rgba(255,255,255,.32);
+}
+
+.galeria-cierre h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(5rem, 10vw, 10rem);
+    font-weight: 400;
+    line-height: .68;
+    letter-spacing: -.04em;
+    color: rgba(255,255,255,.88);
+}
+
+.galeria-cierre > span {
+    margin-top: 55px;
+    font-family: "Montserrat", sans-serif;
+    font-size: .46rem;
+    letter-spacing: .34em;
+    color: rgba(255,255,255,.3);
+}
+
+
+/* ================================================= */
+/* LIGHTBOX                                          */
+/* ================================================= */
+
+.galeria-lightbox {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    padding: 5vh 6%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(3,4,5,.96);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity .4s ease,
+        visibility .4s ease;
+}
+
+.galeria-lightbox.abierto {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.lightbox-contenido {
+    width: min(1100px, 85%);
+    max-height: 88vh;
+    display: grid;
+    grid-template-columns: 1.5fr .5fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.lightbox-imagen {
+    height: 78vh;
+    overflow: hidden;
+}
+
+.lightbox-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.lightbox-info span {
+    font-family: "Montserrat", sans-serif;
+    font-size: .44rem;
+    letter-spacing: .28em;
+    color: rgba(255,255,255,.35);
+}
+
+.lightbox-info h2 {
+    margin: 15px 0 22px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: .9;
+}
+
+.lightbox-info p {
+    font-family: "Montserrat", sans-serif;
+    font-size: .72rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255,255,255,.48);
+}
+
+.lightbox-cerrar,
+.lightbox-flecha {
+    position: absolute;
+    border: 0;
+    background: transparent;
+    color: rgba(255,255,255,.55);
+    cursor: pointer;
+    transition: color .3s ease;
+}
+
+.lightbox-cerrar:hover,
+.lightbox-flecha:hover {
+    color: #fff;
+}
+
+.lightbox-cerrar {
+    top: 30px;
+    right: 40px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.lightbox-flecha {
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 4rem;
+}
+
+.lightbox-anterior {
+    left: 3%;
+}
+
+.lightbox-siguiente {
+    right: 3%;
+}
+
+
+/* FOTO OCULTA POR FILTRO */
+
+.foto-archivo.oculta {
+    display: none;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    .galeria-hero {
+        min-height: 90vh;
+        padding-bottom: 12vh;
+    }
+
+    .galeria-hero h1 {
+        font-size: clamp(5rem, 20vw, 8rem);
+    }
+
+    .galeria-scroll {
+        display: none;
+    }
+
+    .galeria-intro {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 100px 0;
+    }
+
+    .galeria-filtros {
+        justify-content: flex-start;
+        gap: 25px;
+        overflow-x: auto;
+    }
+
+    .galeria-mosaico {
+        grid-template-columns: 1fr;
+    }
+
+    .foto-archivo,
+    .foto-archivo.foto-grande,
+    .foto-archivo.foto-vertical,
+    .foto-archivo.foto-ancha,
+    .galeria-frase {
+        grid-column: 1;
+    }
+
+    .foto-archivo,
+    .foto-archivo.foto-ancha {
+        height: 390px;
+    }
+
+    .foto-archivo.foto-grande,
+    .foto-archivo.foto-vertical {
+        height: 500px;
+    }
+
+    .lightbox-contenido {
+        width: 85%;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .lightbox-imagen {
+        height: 58vh;
+    }
+
+    .lightbox-info h2 {
+        font-size: 2.5rem;
+    }
+
+    .lightbox-info p {
+        display: none;
+    }
+
+    .lightbox-flecha {
+        font-size: 3rem;
+    }
+
+}
+/* ================================================= */
+/* CONTACTO — TWILIGHT                               */
+/* ================================================= */
+
+.pagina-contacto {
+    background: #080b0c;
+    color: #f1f0ec;
+}
+
+.contacto-main {
+    position: relative;
+    min-height: 100vh;
+    padding: 150px 8% 100px;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 10%;
+    align-items: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 15% 40%, rgba(95, 112, 116, .13), transparent 38%),
+        linear-gradient(135deg, #101516 0%, #080b0c 58%, #050708 100%);
+}
+
+
+/* FONDO / NIEBLA */
+
+.contacto-fondo {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.contacto-niebla {
+    position: absolute;
+    width: 700px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(205, 216, 216, .035);
+    filter: blur(70px);
+}
+
+.contacto-niebla-1 {
+    left: -180px;
+    top: 20%;
+    animation: contactoNiebla1 13s ease-in-out infinite alternate;
+}
+
+.contacto-niebla-2 {
+    right: -220px;
+    bottom: 8%;
+    animation: contactoNiebla2 16s ease-in-out infinite alternate;
+}
+
+@keyframes contactoNiebla1 {
+    from { transform: translateX(-30px); }
+    to { transform: translateX(100px); }
+}
+
+@keyframes contactoNiebla2 {
+    from { transform: translateX(40px); }
+    to { transform: translateX(-90px); }
+}
+
+
+/* IZQUIERDA */
+
+.contacto-presentacion {
+    position: relative;
+    z-index: 2;
+}
+
+.contacto-kicker {
+    margin: 0 0 24px;
+    font-family: "Montserrat", sans-serif;
+    font-size: .48rem;
+    letter-spacing: .34em;
+    color: rgba(255,255,255,.35);
+}
+
+.contacto-presentacion h1 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(6rem, 9vw, 9rem);
+    font-weight: 400;
+    line-height: .72;
+    letter-spacing: -.045em;
+}
+
+.contacto-presentacion h1 em {
+    font-weight: 400;
+    color: rgba(255,255,255,.63);
+}
+
+.contacto-bajada {
+    max-width: 340px;
+    margin: 48px 0 0 6px;
+    font-family: "Montserrat", sans-serif;
+    font-size: .78rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(255,255,255,.46);
+}
+
+.contacto-dato {
+    width: min(350px, 100%);
+    margin-top: 75px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 16px;
+}
+
+.contacto-dato span,
+.contacto-dato small {
+    font-family: "Montserrat", sans-serif;
+    font-size: .4rem;
+    letter-spacing: .22em;
+    color: rgba(255,255,255,.27);
+}
+
+.contacto-dato div {
+    height: 1px;
+    background: rgba(255,255,255,.12);
+}
+
+
+/* FORMULARIO */
+
+.contacto-formulario {
+    position: relative;
+    z-index: 2;
+    width: min(600px, 100%);
+    padding: 55px 60px;
+    border: 1px solid rgba(255,255,255,.1);
+    background: rgba(7,10,11,.55);
+    backdrop-filter: blur(10px);
+}
+
+.contacto-form-encabezado {
+    margin-bottom: 48px;
+}
+
+.contacto-form-encabezado > span {
+    font-family: "Montserrat", sans-serif;
+    font-size: .43rem;
+    letter-spacing: .3em;
+    color: rgba(255,255,255,.3);
+}
+
+.contacto-form-encabezado h2 {
+    margin: 13px 0 13px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 3.7rem;
+    font-weight: 400;
+    line-height: .9;
+}
+
+.contacto-form-encabezado p {
+    max-width: 390px;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: .7rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgba(255,255,255,.38);
+}
+
+.contacto-campo {
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.contacto-campo label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: .42rem;
+    letter-spacing: .27em;
+    color: rgba(255,255,255,.4);
+}
+
+.contacto-campo input,
+.contacto-campo select,
+.contacto-campo textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 0 14px;
+    border: 0;
+    border-bottom: 1px solid rgba(255,255,255,.17);
+    outline: none;
+    border-radius: 0;
+    background: transparent;
+    font-family: "Montserrat", sans-serif;
+    font-size: .75rem;
+    font-weight: 300;
+    color: #f2f2ef;
+    transition: border-color .3s ease;
+}
+
+.contacto-campo textarea {
+    resize: none;
+    min-height: 90px;
+}
+
+.contacto-campo input::placeholder,
+.contacto-campo textarea::placeholder {
+    color: rgba(255,255,255,.22);
+}
+
+.contacto-campo input:focus,
+.contacto-campo select:focus,
+.contacto-campo textarea:focus {
+    border-bottom-color: rgba(255,255,255,.7);
+}
+
+.contacto-campo select {
+    cursor: pointer;
+    color-scheme: dark;
+}
+
+.contacto-campo select option {
+    background: #101415;
+    color: #eee;
+}
+
+
+/* BOTÓN */
+
+.contacto-enviar {
+    margin-top: 42px;
+}
+
+.contacto-boton {
+    width: 100%;
+    padding: 19px 22px;
+    border: 1px solid rgba(255,255,255,.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    color: #eee;
+    cursor: pointer;
+    transition:
+        background .4s ease,
+        color .4s ease,
+        border-color .4s ease;
+}
+
+.contacto-boton span {
+    font-family: "Montserrat", sans-serif;
+    font-size: .48rem;
+    letter-spacing: .28em;
+}
+
+.contacto-boton strong {
+    font-size: 1.2rem;
+    font-weight: 300;
+    transition: transform .3s ease;
+}
+
+.contacto-boton:hover {
+    background: #e7e7e2;
+    border-color: #e7e7e2;
+    color: #080b0c;
+}
+
+.contacto-boton:hover strong {
+    transform: translateX(5px);
+}
+
+.contacto-nota {
+    display: block;
+    margin-top: 14px;
+    text-align: right;
+    font-family: "Montserrat", sans-serif;
+    font-size: .36rem;
+    letter-spacing: .22em;
+    color: rgba(255,255,255,.2);
+}
+
+
+/* MENSAJE DE ÉXITO */
+
+.contacto-exito {
+    display: none;
+    min-height: 480px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contacto-exito.visible {
+    display: flex;
+    animation: contactoEntrada .7s ease both;
+}
+
+@keyframes contactoEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contacto-exito > span {
+    font-family: "Montserrat", sans-serif;
+    font-size: .44rem;
+    letter-spacing: .3em;
+    color: rgba(255,255,255,.32);
+}
+
+.contacto-exito h2 {
+    margin: 22px 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: .8;
+}
+
+.contacto-exito p {
+    font-family: "Montserrat", sans-serif;
+    font-size: .75rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255,255,255,.4);
+}
+
+.contacto-exito button {
+    margin-top: 40px;
+    padding: 0 0 7px;
+    border: 0;
+    border-bottom: 1px solid rgba(255,255,255,.25);
+    background: transparent;
+    font-family: "Montserrat", sans-serif;
+    font-size: .43rem;
+    letter-spacing: .25em;
+    color: rgba(255,255,255,.6);
+    cursor: pointer;
+}
+
+
+/* TEXTO VERTICAL */
+
+.contacto-vertical {
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    z-index: 2;
+    transform: translateY(-50%) rotate(90deg);
+    font-family: "Montserrat", sans-serif;
+    font-size: .38rem;
+    letter-spacing: .3em;
+    color: rgba(255,255,255,.16);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .contacto-main {
+        grid-template-columns: 1fr;
+        gap: 80px;
+        padding: 140px 7% 80px;
+    }
+
+    .contacto-presentacion h1 {
+        font-size: clamp(5rem, 18vw, 8rem);
+    }
+
+    .contacto-formulario {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 45px 35px;
+    }
+
+    .contacto-vertical {
+        display: none;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .contacto-formulario {
+        padding: 38px 24px;
+    }
+
+    .contacto-dato {
+        display: none;
+    }
+
+}
+/* ============================================= */
+/* FIX — CARRUSEL DE PERSONAJES                  */
+/* ============================================= */
+
+.personajes-scroll {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
+    gap: 18px;
+}
+
+.personajes-scroll .personaje {
+    flex: 0 0 290px !important;
+    width: 290px !important;
+}
+
+.carrusel-personajes {
+    position: relative;
+    overflow: hidden;
+}
+/* ================================================= */
+/* AJUSTES FINALES                                   */
+/* ================================================= */
+
+/* VOLTERRA — achicar primer hero */
+/* VOLTERRA — AJUSTE FINAL */
+body .volterra-hero {
+    height: 420px !important;
+    min-height: 420px !important;
+    padding: 80px 8% 40px !important;
+}
+
+body .volterra-hero-fondo {
+    transform: none !important;
+    animation: none !important;
+    background-size: cover !important;
+    background-position: center center !important;
+}
+
+
+/* FOREVER — PARA SIEMPRE */
+body .forever-final h2 {
+    font-size: 7rem !important;
+}
+/* FOREVER — TÍTULO GRANDE DEL INICIO */
+.forever-hero h1 {
+    font-size: clamp(5rem, 8vw, 8rem) !important;
+} 
+/* =================================
+   FOOTER TWILIGHT
+================================= */
+
+.footer-twilight {
+    width: 100%;
+    background: #050606;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 55px 40px 30px;
+    text-align: center;
+}
+
+.footer-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-twilight h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: 10px;
+    color: #f0efeb;
+}
+
+.footer-frase {
+    margin: 10px 0 30px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 26px;
+}
+
+.footer-nav a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #ffffff;
+}
+
+.footer-linea {
+    width: 70px;
+    height: 1px;
+    margin: 32px auto 22px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.footer-creditos {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+}
+/* =========================================
+   INTRO CINEMATOGRÁFICA
+========================================= */
+
+.intro-cinematica {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background:
+        radial-gradient(circle at center, rgba(25, 32, 30, 0.22), transparent 55%),
+        #020303;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.intro-contenido {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(12px);
+
+    animation: introAparecer 1.8s ease forwards;
+    animation-delay: 0.4s;
+}
+
+.intro-subtitulo {
+    margin: 0 0 18px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 6px;
+    color: rgba(255, 255, 255, 0.42);
+}
+
+.intro-logo {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(65px, 10vw, 145px);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: 12px;
+    color: #ecebea;
+    text-shadow:
+        0 0 30px rgba(200, 215, 210, 0.08),
+        0 0 70px rgba(180, 200, 195, 0.05);
+}
+
+.intro-linea {
+    width: 0;
+    height: 1px;
+    margin: 30px auto 22px;
+    background: rgba(255, 255, 255, 0.28);
+
+    animation: introLinea 1.4s ease forwards;
+    animation-delay: 1.1s;
+}
+
+.intro-frase {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 13px;
+    font-style: italic;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.48);
+}
+
+.intro-niebla {
+    position: absolute;
+    inset: -20%;
+    z-index: 1;
+
+    background:
+        radial-gradient(
+            ellipse at 30% 50%,
+            rgba(180, 195, 190, 0.07),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 75% 40%,
+            rgba(180, 195, 190, 0.05),
+            transparent 40%
+        );
+
+    filter: blur(25px);
+    animation: nieblaIntro 8s ease-in-out infinite alternate;
+}
+
+@keyframes introAparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes introLinea {
+    to {
+        width: 90px;
+    }
+}
+
+@keyframes nieblaIntro {
+    from {
+        transform: translateX(-3%) scale(1);
+    }
+
+    to {
+        transform: translateX(3%) scale(1.08);
+    }
+}
+/* =========================================
+   ATMÓSFERA FORKS · LLUVIA + NIEBLA
+========================================= */
+
+.atmosfera-forks {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 20;
+}
+
+/* LLUVIA */
+
+.lluvia {
+    position: absolute;
+    inset: -100px 0 0 0;
+    width: 100%;
+    height: calc(100% + 100px);
+
+    background-image:
+        repeating-linear-gradient(
+            105deg,
+            transparent 0px,
+            transparent 18px,
+            rgba(220, 230, 228, 0.10) 19px,
+            transparent 20px,
+            transparent 42px
+        );
+
+    background-size: 180px 180px;
+    opacity: 0.32;
+
+    animation: lluviaForks 0.8s linear infinite;
+}
+
+.lluvia-2 {
+    background-size: 260px 260px;
+    opacity: 0.16;
+    animation-duration: 1.15s;
+    transform: translateX(60px);
+}
+
+/* NIEBLA */
+
+.niebla-forks {
+    position: absolute;
+    left: -20%;
+    bottom: -15%;
+    width: 140%;
+    height: 55%;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(205, 215, 212, 0.10) 0%,
+            rgba(150, 165, 160, 0.05) 35%,
+            transparent 70%
+        );
+
+    filter: blur(35px);
+    opacity: 0.65;
+
+    animation: nieblaForks 12s ease-in-out infinite alternate;
+}
+
+/* MOVIMIENTOS */
+
+@keyframes lluviaForks {
+    from {
+        background-position: 0 -180px;
+    }
+
+    to {
+        background-position: -80px 180px;
+    }
+}
+
+@keyframes nieblaForks {
+    from {
+        transform: translateX(-4%);
+    }
+
+    to {
+        transform: translateX(4%);
+    }
+}
+/* =========================================
+   ATMÓSFERA LA PUSH · BRUMA + LUZ DEL MAR
+========================================= */
+
+.atmosfera-lapush {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 20;
+}
+
+/* BRUMA COSTERA */
+
+.bruma-mar {
+    position: absolute;
+    width: 150%;
+    height: 45%;
+    left: -25%;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(205, 218, 220, 0.11) 0%,
+            rgba(160, 180, 185, 0.05) 40%,
+            transparent 72%
+        );
+
+    filter: blur(32px);
+}
+
+.bruma-mar-1 {
+    bottom: -8%;
+    opacity: 0.75;
+    animation: brumaMarUno 14s ease-in-out infinite alternate;
+}
+
+.bruma-mar-2 {
+    bottom: 12%;
+    opacity: 0.35;
+    transform: scale(1.15);
+    animation: brumaMarDos 19s ease-in-out infinite alternate;
+}
+
+/* LUZ FRÍA DEL OCÉANO */
+
+.luz-mar {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 90%,
+            rgba(180, 205, 210, 0.09),
+            transparent 55%
+        );
+
+    opacity: 0.8;
+    animation: respirarMar 7s ease-in-out infinite alternate;
+}
+
+/* MOVIMIENTO */
+
+@keyframes brumaMarUno {
+    from {
+        transform: translateX(-5%);
+    }
+
+    to {
+        transform: translateX(5%);
+    }
+}
+
+@keyframes brumaMarDos {
+    from {
+        transform: translateX(5%) scale(1.15);
+    }
+
+    to {
+        transform: translateX(-5%) scale(1.20);
+    }
+}
+
+@keyframes respirarMar {
+    from {
+        opacity: 0.45;
+    }
+
+    to {
+        opacity: 0.85;
+    }
+} 
+/* DESACTIVAR INTRO */
+.intro-cinematica {
+    display: none !important;
+}
+/* ==============================
+   QUIZ — COLOR ORIGINAL
+============================== */
+
+.quiz-caja {
+    background: #050606 !important;
+    color: #ffffff !important;
+}
+
+.quiz-caja h3,
+.quiz-caja p,
+.quiz-caja span,
+.quiz-caja strong {
+    color: #ffffff !important;
+}
+
+.quiz-respuesta {
+    background: #050606 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+.quiz-respuesta:hover {
+    background: #111514 !important;
+    color: #ffffff !important;
+}
+
+#pregunta,
+#tituloResultado,
+#textoResultado {
+    color: #ffffff !important;
+}
+/* DESACTIVAR INTRO */
+.intro-cinematica {
+    display: none !important;
+}

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Twilight | Contacto</title>
+
+    <!-- TIPOGRAFÍAS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="pagina-contacto">
+
+    <!-- ========================================= -->
+    <!-- HEADER                                    -->
+    <!-- ========================================= -->
+
+    <header class="header">
+
+        <a href="index.html" class="logo">
+            TWILIGHT
+        </a>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="forks.html">Forks</a>
+            <a href="lapush.html">La Push</a>
+            <a href="cullen.html">Casa Cullen</a>
+            <a href="volterra.html">Volterra</a>
+            <a href="forever_espanol.html">Forever</a>
+            <a href="galeria.html">Galería</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+
+    </header>
+
+
+    <main class="contacto-main">
+
+        <!-- FONDO -->
+
+        <div class="contacto-fondo">
+            <div class="contacto-niebla contacto-niebla-1"></div>
+            <div class="contacto-niebla contacto-niebla-2"></div>
+        </div>
+
+
+        <!-- COLUMNA IZQUIERDA -->
+
+        <section class="contacto-presentacion">
+
+            <p class="contacto-kicker">
+                FORKS · WASHINGTON
+            </p>
+
+            <h1>
+                Dejá tu<br>
+                <em>mensaje.</em>
+            </h1>
+
+            <p class="contacto-bajada">
+                Hay historias que terminan.
+                Otras simplemente esperan
+                una respuesta.
+            </p>
+
+            <div class="contacto-dato">
+
+                <span>TWILIGHT ARCHIVE</span>
+
+                <div></div>
+
+                <small>
+                    47°57′N · 124°23′W
+                </small>
+
+            </div>
+
+        </section>
+
+
+        <!-- FORMULARIO -->
+
+        <section class="contacto-formulario">
+
+            <div class="contacto-form-encabezado">
+
+                <span>01 / CONTACTO</span>
+
+                <h2>
+                    Escribinos.
+                </h2>
+
+                <p>
+                    Completá los datos y dejá tu mensaje
+                    dentro del archivo de Twilight.
+                </p>
+
+            </div>
+
+
+            <form id="formularioContacto">
+
+                <div class="contacto-campo">
+
+                    <label for="contactoNombre">
+                        NOMBRE
+                    </label>
+
+                    <input
+                        type="text"
+                        id="contactoNombre"
+                        name="nombre"
+                        placeholder="Tu nombre"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="contacto-campo">
+
+                    <label for="contactoEmail">
+                        EMAIL
+                    </label>
+
+                    <input
+                        type="email"
+                        id="contactoEmail"
+                        name="email"
+                        placeholder="tu@email.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="contacto-campo">
+
+                    <label for="contactoAsunto">
+                        ASUNTO
+                    </label>
+
+                    <select
+                        id="contactoAsunto"
+                        name="asunto"
+                        required
+                    >
+
+                        <option value="" disabled selected>
+                            Elegí una opción
+                        </option>
+
+                        <option value="saga">
+                            La saga
+                        </option>
+
+                        <option value="personajes">
+                            Personajes
+                        </option>
+
+                        <option value="lugares">
+                            Lugares
+                        </option>
+
+                        <option value="archivo">
+                            Archivo y galería
+                        </option>
+
+                        <option value="otro">
+                            Otro
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="contacto-campo contacto-campo-mensaje">
+
+                    <label for="contactoMensaje">
+                        MENSAJE
+                    </label>
+
+                    <textarea
+                        id="contactoMensaje"
+                        name="mensaje"
+                        rows="5"
+                        placeholder="Escribí tu mensaje..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="contacto-enviar">
+
+                    <button type="submit" class="contacto-boton">
+                        <span>ENVIAR MENSAJE</span>
+                        <strong>→</strong>
+                    </button>
+
+                    <span class="contacto-nota">
+                        TODOS LOS CAMPOS SON OBLIGATORIOS
+                    </span>
+
+                </div>
+
+            </form>
+
+
+            <!-- MENSAJE DE ÉXITO -->
+
+            <div
+                class="contacto-exito"
+                id="contactoExito"
+                aria-live="polite"
+            >
+
+                <span>MENSAJE ENVIADO</span>
+
+                <h2>
+                    Nos vemos<br>
+                    en Forks.
+                </h2>
+
+                <p>
+                    Tu mensaje quedó guardado
+                    en el archivo.
+                </p>
+
+                <button
+                    type="button"
+                    id="contactoOtroMensaje"
+                >
+                    ESCRIBIR OTRO →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- DECORACIÓN -->
+
+        <span class="contacto-vertical">
+            THE TWILIGHT SAGA · 2008—2012
+        </span>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Proyecto académico inspirado en The Twilight Saga
+        </p>
+
+        <p>
+            HTML · CSS · JavaScript
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+    <!-- FOOTER -->
+<footer class="footer-twilight">
+
+    <div class="footer-contenido">
+
+        <p class="footer-titulo">
+            ENTRE LA NIEBLA Y LA ETERNIDAD
+        </p>
+
+        <p class="footer-frase">
+            Una experiencia inspirada en The Twilight Saga
+        </p>
+
+        <div class="footer-linea"></div>
+
+        <p class="footer-autora">
+            Diseño y desarrollo · Zoe Arcucci
+        </p>
+
+        <p class="footer-info">
+            Universidad de Palermo · 2026
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

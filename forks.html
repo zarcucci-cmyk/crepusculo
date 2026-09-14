@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Forks | Twilight</title>
+
+    <!-- MISMAS TIPOGRAFÍAS DE TU WEB -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- MISMO CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="pagina-forks">
+    <!-- ATMÓSFERA FORKS -->
+<div class="atmosfera-forks" aria-hidden="true">
+    <div class="lluvia lluvia-1"></div>
+    <div class="lluvia lluvia-2"></div>
+    <div class="niebla-forks"></div>
+</div>
+
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
+
+   <header class="header">
+
+    <a href="index.html" class="logo">
+        TWILIGHT
+    </a>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="forks.html">Forks</a>
+        <a href="lapush.html">La Push</a>
+        <a href="cullen.html">Casa Cullen</a>
+        <a href="volterra.html">Volterra</a>
+        <a href="forever_espanol.html">Forever</a>
+        <a href="galeria.html">Galería</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+</header>
+
+
+    <main>
+
+        <!-- ========================= -->
+        <!-- ENTRADA A FORKS -->
+        <!-- ========================= -->
+
+        <section class="forks-hero">
+
+            <div class="forks-niebla"></div>
+            <div class="forks-overlay"></div>
+
+            <div class="forks-hero-contenido">
+
+                <p class="subtitulo">
+                    WASHINGTON · USA
+                </p>
+
+                <p class="forks-coordenadas">
+                    47.9504° N · 124.3855° W
+                </p>
+
+                <h1>
+                    Bienvenidos<br>
+                    a Forks
+                </h1>
+
+                <p class="forks-intro">
+                    Un pequeño pueblo de Washington rodeado de bosques y lluvia. El lugar al que Bella llega pensando que nada podría pasar
+                </p>
+
+                <a href="#explorar" class="btn principal">
+                    Explorar Forks
+                </a>
+
+            </div>
+
+            <div class="forks-clima">
+                <span>☂</span>
+                <div>
+                    <small>CLIMA</small>
+                    <p>Lluvia · 11°C</p>
+                </div>
+            </div>
+
+            <div class="scroll">
+                ↓
+                <span>descendé</span>
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- EXPLORADOR -->
+        <!-- ========================= -->
+
+        <section class="seccion forks-explorar" id="explorar">
+
+            <div class="titulo-seccion">
+
+                <p class="subtitulo">
+                    EXPEDIENTE 01
+                </p>
+
+                <h2>
+                    Explorá Forks
+                </h2>
+
+                <p>
+                    Recorré algunos de los lugares que forman parte de la vida de Bella desde su llegada a Forks
+                </p>
+
+            </div>
+
+
+            <!-- PROGRESO -->
+
+            <div class="forks-progreso">
+
+                <div>
+                    <span>FORKS DISCOVERED</span>
+                    <strong id="lugaresDescubiertos">0 / 4</strong>
+                </div>
+
+                <div class="forks-progreso-barra">
+                    <div id="progresoForks"></div>
+                </div>
+
+            </div>
+
+
+            <!-- LUGARES -->
+
+            <div class="forks-lugares">
+
+                <!-- CASA SWAN -->
+
+                <article class="forks-lugar" data-lugar="swan">
+
+                    <div class="forks-numero">
+                        01
+                    </div>
+
+                    <div class="forks-lugar-contenido">
+
+                        <span>
+                            1849 · FORKS
+                        </span>
+
+                        <h3>
+                            Casa Swan
+                        </h3>
+
+                        <p>
+                            La casa de Charlie Swan.
+                            Y el lugar donde Bella comienza
+                            una vida que cambiará para siempre.
+                        </p>
+
+                        <button class="forks-descubrir" data-descubrir="swan">
+                            Entrar →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- INSTITUTO -->
+
+                <article class="forks-lugar" data-lugar="instituto">
+
+                    <div class="forks-numero">
+                        02
+                    </div>
+
+                    <div class="forks-lugar-contenido">
+
+                        <span>
+                            FORKS HIGH SCHOOL
+                        </span>
+
+                        <h3>
+                            El Instituto
+                        </h3>
+
+                        <p>
+                            Un laboratorio de biología.
+                            Una mirada imposible de ignorar.
+                            El comienzo de todo.
+                        </p>
+
+                        <button class="forks-descubrir" data-descubrir="instituto">
+                            Explorar →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- HOSPITAL -->
+
+                <article class="forks-lugar" data-lugar="hospital">
+
+                    <div class="forks-numero">
+                        03
+                    </div>
+
+                    <div class="forks-lugar-contenido">
+
+                        <span>
+                            FORKS COMMUNITY HOSPITAL
+                        </span>
+
+                        <h3>
+                            Hospital
+                        </h3>
+
+                        <p>
+                            El lugar donde trabaja Carlisle Cullen.
+                            Un médico extraordinariamente
+                            bueno escondiendo secretos.
+                        </p>
+
+                        <button class="forks-descubrir" data-descubrir="hospital">
+                            Investigar →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BOSQUE -->
+
+                <article class="forks-lugar" data-lugar="bosque">
+
+                    <div class="forks-numero">
+                        04
+                    </div>
+
+                    <div class="forks-lugar-contenido">
+
+                        <span>
+                            RESTRICTED AREA
+                        </span>
+
+                        <h3>
+                            El Bosque
+                        </h3>
+
+                        <p>
+                            Si escuchás algo moverse entre
+                            los árboles, probablemente sea
+                            mejor no seguirlo.
+                        </p>
+
+                        <button class="forks-descubrir" data-descubrir="bosque">
+                            Entrar al bosque →
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- ARCHIVO SECRETO -->
+        <!-- ========================= -->
+
+        <section class="seccion forks-archivo" id="archivo">
+
+            <div class="forks-archivo-contenido">
+
+                <p class="subtitulo">
+                    CONFIDENTIAL
+                </p>
+
+                <h2>
+                    Forks tiene secretos.
+                </h2>
+
+                <p>
+                    Explorá los cuatro lugares para desbloquear
+                    un archivo que no debería estar acá.
+                </p>
+
+                <div class="archivo-bloqueado" id="archivoSecreto">
+
+                    <span>🔒</span>
+
+                    <p>
+                        ARCHIVO BLOQUEADO
+                    </p>
+
+                    <small>
+                        Descubrí 4 lugares para acceder.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================= -->
+    <!-- PANEL DE LUGAR -->
+    <!-- ========================= -->
+
+    <div class="forks-panel oculto" id="forksPanel">
+
+        <div class="forks-panel-fondo" id="cerrarForksFondo"></div>
+
+        <div class="forks-panel-contenido">
+
+            <button
+                class="forks-panel-cerrar"
+                id="cerrarForksPanel"
+                aria-label="Cerrar"
+            >
+                ×
+            </button>
+
+            <p class="subtitulo" id="forksPanelEtiqueta">
+                FORKS
+            </p>
+
+            <h2 id="forksPanelTitulo">
+                Lugar
+            </h2>
+
+            <p id="forksPanelTexto">
+            </p>
+
+            <div id="forksPanelExtra"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- JS -->
+    <!-- ========================= -->
+
+   <script src="js/script.js"></script>
+
+<footer class="footer-twilight">
+
+    <div class="footer-contenido">
+
+        <p class="footer-titulo">
+            ENTRE LA NIEBLA Y LA ETERNIDAD
+        </p>
+
+        <p class="footer-frase">
+            Una experiencia inspirada en The Twilight Saga
+        </p>
+
+        <div class="footer-linea"></div>
+
+        <p class="footer-autora">
+            Diseño y desarrollo · Zoe Arcucci
+        </p>
+
+        <p class="footer-info">
+            Universidad de Palermo · 2026
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Twilight | Detrás de Twilight</title>
+
+    <!-- TIPOGRAFÍAS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="pagina-galeria">
+
+    <!-- ========================================= -->
+    <!-- HEADER                                    -->
+    <!-- ========================================= -->
+
+    <header class="header">
+
+        <a href="index.html" class="logo">
+            TWILIGHT
+        </a>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="forks.html">Forks</a>
+            <a href="lapush.html">La Push</a>
+            <a href="cullen.html">Casa Cullen</a>
+            <a href="volterra.html">Volterra</a>
+            <a href="forever_espanol.html">Forever</a>
+            <a href="galeria.html">Galería</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- ========================================= -->
+        <!-- HERO                                      -->
+        <!-- ========================================= -->
+
+        <section class="galeria-hero">
+
+            <div class="galeria-hero-fondo">
+                <img
+                    src="img/galeria-rodaje.jpg"
+                    alt="Rodaje de Twilight"
+                >
+            </div>
+
+            <div class="galeria-hero-overlay"></div>
+
+            <div class="galeria-hero-contenido">
+
+                <p class="galeria-kicker">
+                    ARCHIVO DE PRODUCCIÓN · 2008—2012
+                </p>
+
+                <h1>
+                    Detrás de<br>
+                    <em>Twilight.</em>
+                </h1>
+
+                <p class="galeria-hero-texto">
+                    Antes de convertirse en Forks, Volterra
+                    o Isla Esme, hubo cámaras, sets, maquillaje
+                    y un equipo construyendo cada escena.
+                </p>
+
+            </div>
+
+            <div class="galeria-scroll">
+                <span>EXPLORAR EL ARCHIVO</span>
+                <div></div>
+            </div>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- INTRO                                     -->
+        <!-- ========================================= -->
+
+        <section class="galeria-intro">
+
+            <div class="galeria-intro-numero">
+                01
+            </div>
+
+            <div class="galeria-intro-texto">
+
+                <p>FUERA DE CÁMARA</p>
+
+                <h2>
+                    La saga desde<br>
+                    el otro lado.
+                </h2>
+
+                <span>
+                    Cinco películas construyeron un universo
+                    reconocible en todo el mundo. Este archivo
+                    reúne algunos de los momentos que sucedieron
+                    antes y después de cada toma.
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- FILTROS                                   -->
+        <!-- ========================================= -->
+
+        <section class="galeria-filtros">
+
+            <button class="filtro-galeria activo" data-filtro="todos">
+                TODO
+            </button>
+
+            <button class="filtro-galeria" data-filtro="rodaje">
+                RODAJE
+            </button>
+
+            <button class="filtro-galeria" data-filtro="elenco">
+                ELENCO
+            </button>
+
+            <button class="filtro-galeria" data-filtro="sets">
+                SETS
+            </button>
+
+            <button class="filtro-galeria" data-filtro="produccion">
+                PRODUCCIÓN
+            </button>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- ARCHIVO FOTOGRÁFICO                       -->
+        <!-- ========================================= -->
+
+        <section class="galeria-archivo">
+
+            <div class="galeria-mosaico">
+
+
+                <!-- 01 -->
+
+                <article
+                    class="foto-archivo foto-grande"
+                    data-categoria="rodaje"
+                    data-imagen="img/galeria-bosque.jpg"
+                    data-titulo="Entre los árboles"
+                    data-descripcion="Bella y Edward durante el rodaje de una de las escenas en el bosque."
+                >
+
+                    <img
+                        src="img/galeria-bosque.jpg"
+                        alt="Rodaje de Bella y Edward en el bosque"
+                    >
+
+                    <div class="foto-overlay">
+                        <span>ARCHIVO 01 · RODAJE</span>
+                        <h3>Entre los árboles</h3>
+                    </div>
+
+                </article>
+
+
+                <!-- 02 -->
+
+                <article
+                    class="foto-archivo foto-vertical"
+                    data-categoria="rodaje"
+                    data-imagen="img/galeria-beisbol.jpg"
+                    data-titulo="El partido"
+                    data-descripcion="Detrás de cámaras de una de las escenas más recordadas de la primera película."
+                >
+
+                    <img
+                        src="img/galeria-beisbol.jpg"
+                        alt="Detrás de cámaras de la escena de béisbol"
+                    >
+
+                    <div class="foto-overlay">
+                        <span>ARCHIVO 02 · RODAJE</span>
+                        <h3>El partido</h3>
+                    </div>
+
+                </article>
+
+
+                <!-- 03 -->
+
+                <article
+                    class="foto-archivo"
+                    data-categoria="produccion"
+                    data-imagen="img/galeria-rodaje.jpg"
+                    data-titulo="Fuera del cuadro"
+                    data-descripcion="Cámaras, luces y equipo técnico transforman una locación real en el universo de Twilight."
+                >
+
+                    <img
+                        src="img/galeria-rodaje.jpg"
+                        alt="Equipo técnico durante el rodaje"
+                    >
+
+                    <div class="foto-overlay">
+                        <span>ARCHIVO 03 · PRODUCCIÓN</span>
+                        <h3>Fuera del cuadro</h3>
+                    </div>
+
+                </article>
+
+
+                <!-- 04 -->
+
+                <article
+                    class="foto-archivo foto-vertical"
+                    data-categoria="produccion"
+                    data-imagen="img/galeria-directora.jpg"
+                    data-titulo="Detrás de la primera película"
+                    data-descripcion="Catherine Hardwicke durante la realización de Twilight."
+                >
+
+                    <img
+                        src="img/galeria-directora.jpg"
+                        alt="Catherine Hardwicke durante el rodaje"
+                    >
+
+                    <div class="foto-overlay">
+                        <span>ARCHIVO 04 · PRODUCCIÓN</span>
+                        <h3>La directora</h3>
+                    </div>
+
+                </article>
+
+
+                <!-- 05 -->
+
+                <article
+                    class="foto-archivo foto-ancha"
+                    data-categoria="elenco"
+                    data-imagen="img/galeria-elenco.jpg"
+                    data-titulo="Entre tomas"
+                    data-descripcion="El elenco de Twilight fuera de personaje durante la producción de la saga."
+                >
+
+                    <img
+                        src="img/galeria-elenco.jpg"
+                        alt="Elenco de Twilight detrás de cámaras"
+                    >
+
+                    <div class="foto-overlay">
+                        <span>ARCHIVO 05 · ELENCO</span>
+                        <h3>Entre tomas</h3>
+                    </div>
+
+                </article>
+
+
+                <!-- FRASE -->
+
+                <div class="galeria-frase">
+
+                    <span>TWILIGHT ARCHIVE</span>
+
+                    <blockquote>
+                        Cada imagen guarda
+                        una parte de lo que
+                        ocurrió fuera de cámara.
+                    </blockquote>
+
+                    <div></div>
+
+                    <small>2008 — 2012</small>
+
+                </div>
+
+
+                <!-- 06 -->
+
+                <article
+                    class="foto-archivo"
+                    data-categoria="rodaje"
+                    data-imagen="img/galeria-newmoon.jpg"
+                    data-titulo="New Moon"
+                    data-descripcion="El universo de la saga vuelve a construirse para la segunda película."
+                >
+
+                    <img
+                        src="img/galeria-newmoon.jpg"
+                        alt="Rodaje de New Moon"
+                    >
+
+                    <div class="foto-overlay">
+                        <span>ARCHIVO 06 · RODAJE</span>
+                        <h3>New Moon</h3>
+                    </div>
+
+                </article>
+
+
+                <!-- 07 -->
+
+                <article
+                    class="foto-archivo foto-grande"
+                    data-categoria="sets"
+                    data-imagen="img/galeria-volterra.jpg"
+                    data-titulo="Volterra"
+                    data-descripcion="La producción detrás de las escenas que llevaron la historia hasta Italia."
+                >
+
+                    <img
+                        src="img/galeria-volterra.jpg"
+                        alt="Grabación de las escenas de Volterra"
+                    >
+
+                    <div class="foto-overlay">
+                        <span>ARCHIVO 07 · SETS</span>
+                        <h3>Volterra</h3>
+                    </div>
+
+                </article>
+
+
+                <!-- 08 -->
+
+                <article
+                    class="foto-archivo foto-vertical"
+                    data-categoria="rodaje"
+                    data-imagen="img/galeria-eclipse.jpg"
+                    data-titulo="Eclipse"
+                    data-descripcion="Una mirada detrás de cámaras durante la producción de la tercera película."
+                >
+
+                    <img
+                        src="img/galeria-eclipse.jpg"
+                        alt="Detrás de cámaras de Eclipse"
+                    >
+
+                    <div class="foto-overlay">
+                        <span>ARCHIVO 08 · RODAJE</span>
+                        <h3>Eclipse</h3>
+                    </div>
+
+                </article>
+
+
+                <!-- 09 -->
+
+                <article
+                    class="foto-archivo"
+                    data-categoria="produccion"
+                    data-imagen="img/galeria-maquillaje.jpg"
+                    data-titulo="Convertirse en Cullen"
+                    data-descripcion="Maquillaje y preparación ayudaron a construir la apariencia característica de los vampiros."
+                >
+
+                    <img
+                        src="img/galeria-maquillaje.jpg"
+                        alt="Preparación y maquillaje de los Cullen"
+                    >
+
+                    <div class="foto-overlay">
+                        <span>ARCHIVO 09 · PRODUCCIÓN</span>
+                        <h3>Convertirse en Cullen</h3>
+                    </div>
+
+                </article>
+
+
+                <!-- 10 -->
+
+                <article
+                    class="foto-archivo foto-ancha"
+                    data-categoria="rodaje"
+                    data-imagen="img/galeria-boda.jpg"
+                    data-titulo="La boda"
+                    data-descripcion="Detrás de cámaras de uno de los momentos centrales de Breaking Dawn."
+                >
+
+                    <img
+                        src="img/galeria-boda.jpg"
+                        alt="Rodaje de la boda de Bella y Edward"
+                    >
+
+                    <div class="foto-overlay">
+                        <span>ARCHIVO 10 · RODAJE</span>
+                        <h3>La boda</h3>
+                    </div>
+
+                </article>
+
+
+                <!-- 11 -->
+
+                <article
+                    class="foto-archivo foto-grande"
+                    data-categoria="sets"
+                    data-imagen="img/galeria-isla.jpg"
+                    data-titulo="Isla Esme"
+                    data-descripcion="El rodaje detrás del viaje de Bella y Edward en Breaking Dawn."
+                >
+
+                    <img
+                        src="img/galeria-isla.jpg"
+                        alt="Rodaje de Isla Esme"
+                    >
+
+                    <div class="foto-overlay">
+                        <span>ARCHIVO 11 · SETS</span>
+                        <h3>Isla Esme</h3>
+                    </div>
+
+                </article>
+
+
+                <!-- 12 -->
+
+                <article
+                    class="foto-archivo foto-vertical"
+                    data-categoria="elenco"
+                    data-imagen="img/galeria-breakingdawn.jpg"
+                    data-titulo="El último capítulo"
+                    data-descripcion="El elenco durante la producción de Breaking Dawn, cierre cinematográfico de la saga."
+                >
+
+                    <img
+                        src="img/galeria-breakingdawn.jpg"
+                        alt="Elenco de Breaking Dawn detrás de cámaras"
+                    >
+
+                    <div class="foto-overlay">
+                        <span>ARCHIVO 12 · ELENCO</span>
+                        <h3>El último capítulo</h3>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- CIERRE                                    -->
+        <!-- ========================================= -->
+
+        <section class="galeria-cierre">
+
+            <p>2008 — 2012</p>
+
+            <h2>
+                THE<br>
+                TWILIGHT<br>
+                SAGA
+            </h2>
+
+            <span>
+                DEL SET A LA ETERNIDAD
+            </span>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================= -->
+    <!-- LIGHTBOX                                  -->
+    <!-- ========================================= -->
+
+    <div class="galeria-lightbox" id="galeriaLightbox">
+
+        <button
+            class="lightbox-cerrar"
+            id="lightboxCerrar"
+            aria-label="Cerrar imagen"
+        >
+            ×
+        </button>
+
+        <button
+            class="lightbox-flecha lightbox-anterior"
+            id="lightboxAnterior"
+            aria-label="Imagen anterior"
+        >
+            ‹
+        </button>
+
+        <div class="lightbox-contenido">
+
+            <div class="lightbox-imagen">
+                <img
+                    id="lightboxImagen"
+                    src=""
+                    alt=""
+                >
+            </div>
+
+            <div class="lightbox-info">
+
+                <span id="lightboxNumero">
+                    ARCHIVO
+                </span>
+
+                <h2 id="lightboxTitulo"></h2>
+
+                <p id="lightboxDescripcion"></p>
+
+            </div>
+
+        </div>
+
+        <button
+            class="lightbox-flecha lightbox-siguiente"
+            id="lightboxSiguiente"
+            aria-label="Imagen siguiente"
+        >
+            ›
+        </button>
+
+    </div>
+
+
+    <footer>
+        <p>
+            Proyecto académico inspirado en The Twilight Saga
+        </p>
+
+        <p>
+            HTML · CSS · JavaScript
+        </p>
+    </footer>
+
+
+    <script src="js/script.js"></script>
+    <!-- FOOTER -->
+<footer class="footer-twilight">
+
+    <div class="footer-contenido">
+
+        <p class="footer-titulo">
+            ENTRE LA NIEBLA Y LA ETERNIDAD
+        </p>
+
+        <p class="footer-frase">
+            Una experiencia inspirada en The Twilight Saga
+        </p>
+
+        <div class="footer-linea"></div>
+
+        <p class="footer-autora">
+            Diseño y desarrollo · Zoe Arcucci
+        </p>
+
+        <p class="footer-info">
+            Universidad de Palermo · 2026
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

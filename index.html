@@ -1,0 +1,836 @@
+ <!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Twilight | Entre la niebla y la eternidad</title>
+
+    <!-- TIPOGRAFÍAS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+<!-- INTRO CINEMATOGRÁFICA -->
+<div id="intro-cinematica" class="intro-cinematica">
+
+    <div class="intro-niebla"></div>
+
+    <div class="intro-contenido">
+        <p class="intro-subtitulo">THE TWILIGHT SAGA</p>
+
+        <h1 class="intro-logo">TWILIGHT</h1>
+
+        <div class="intro-linea"></div>
+
+        <p class="intro-frase">
+            ENTRE LA NIEBLA Y LA ETERNIDAD
+        </p>
+    </div>
+
+</div>
+    <!-- AUDIO -->
+    <audio id="audioAmbiente" loop>
+        <source src="audio/forestambiente.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
+
+   <header class="header">
+
+    <a href="index.html" class="logo">
+        TWILIGHT
+    </a>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="forks.html">Forks</a>
+        <a href="lapush.html">La Push</a>
+        <a href="cullen.html">Casa Cullen</a>
+        <a href="volterra.html">Volterra</a>
+        <a href="forever_espanol.html">Forever</a>
+        <a href="galeria.html">Galería</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <button id="botonSonido" class="boton-sonido">
+        ♫ Sonido
+    </button>
+
+</header>
+
+    <main>
+
+
+        <!-- ========================= -->
+        <!-- INICIO -->
+        <!-- ========================= -->
+
+        <section class="hero" id="inicio">
+
+            <video class="video-fondo" autoplay muted loop playsinline>
+                <source src="video/forks.mp4" type="video/mp4">
+            </video>
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-contenido">
+
+                <p class="subtitulo">
+                    FORKS, WASHINGTON
+                </p>
+
+                <h1>
+                    Entre la niebla<br>
+                    y la eternidad
+                </h1>
+
+                <p class="hero-texto">
+                    Adentrate en un mundo donde humanos, vampiros
+                    y lobos conviven entre secretos, peligro
+                    y un amor imposible de ignorar.
+                </p>
+
+                <div class="hero-botones">
+
+                    <a href="#saga" class="btn principal">
+                        Entrar al universo
+                    </a>
+
+                    <a href="#quiz" class="btn secundario">
+                        Descubrir qué soy
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="scroll">
+                ↓
+                <span>explorá</span>
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- SAGA -->
+        <!-- ========================= -->
+
+        <section class="seccion saga" id="saga">
+
+            <div class="titulo-seccion">
+
+                <p class="subtitulo">
+                    CINCO PELÍCULAS
+                </p>
+
+                <h2>La Saga</h2>
+
+                <p>
+                    Un amor imposible, alianzas inesperadas
+                    y una historia que atraviesa dos mundos.
+                </p>
+
+            </div>
+
+
+            <div class="peliculas">
+
+                <article class="pelicula">
+
+                    <img src="img/crepusculo.jpg" alt="Crepúsculo">
+
+                    <div class="pelicula-info">
+
+                        <span>2008</span>
+
+                        <h3>Crepúsculo</h3>
+
+                        <button
+                            class="abrir-info"
+                            data-titulo="Crepúsculo"
+                            data-texto="Bella Swan llega a Forks y conoce a Edward Cullen. La atracción entre ambos revela un mundo que Bella nunca imaginó."
+                        >
+                            Descubrir
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="pelicula">
+
+                    <img src="img/luna-nueva.jpg" alt="Luna Nueva">
+
+                    <div class="pelicula-info">
+
+                        <span>2009</span>
+
+                        <h3>Luna Nueva</h3>
+
+                        <button
+                            class="abrir-info"
+                            data-titulo="Luna Nueva"
+                            data-texto="La ausencia de Edward acerca a Bella a Jacob Black y al universo de los cambiaformas de La Push."
+                        >
+                            Descubrir
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="pelicula">
+
+                    <img src="img/eclipse.jpg" alt="Eclipse">
+
+                    <div class="pelicula-info">
+
+                        <span>2010</span>
+
+                        <h3>Eclipse</h3>
+
+                        <button
+                            class="abrir-info"
+                            data-titulo="Eclipse"
+                            data-texto="Bella queda atrapada entre Edward y Jacob mientras una nueva amenaza obliga a vampiros y lobos a colaborar."
+                        >
+                            Descubrir
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="pelicula">
+
+                    <img src="img/amanecer-parte1.jpg" alt="Amanecer Parte 1">
+
+                    <div class="pelicula-info">
+
+                        <span>2011</span>
+
+                        <h3>Amanecer I</h3>
+
+                        <button
+                            class="abrir-info"
+                            data-titulo="Amanecer Parte 1"
+                            data-texto="Bella y Edward se casan, pero un acontecimiento inesperado pone en peligro a toda la familia Cullen."
+                        >
+                            Descubrir
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="pelicula">
+
+                    <img src="img/amanecer-parte2.jpg" alt="Amanecer Parte 2">
+
+                    <div class="pelicula-info">
+
+                        <span>2012</span>
+
+                        <h3>Amanecer II</h3>
+
+                        <button
+                            class="abrir-info"
+                            data-titulo="Amanecer Parte 2"
+                            data-texto="Bella descubre su nueva vida y los Cullen reúnen aliados para enfrentar a los Volturi."
+                        >
+                            Descubrir
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- PERSONAJES -->
+        <!-- ========================= -->
+
+        <section class="seccion personajes" id="personajes">
+
+            <div class="titulo-seccion">
+
+                <p class="subtitulo">
+                    ELEGÍ UN LADO
+                </p>
+
+                <h2>Personajes</h2>
+
+                <p>
+                    Humanos, vampiros y cambiaformas conviven
+                    en un equilibrio mucho más frágil de lo que parece.
+                </p>
+
+            </div>
+
+
+            <div class="carrusel-personajes">
+
+                <button
+                    class="flecha-personaje izquierda"
+                    id="personajesAnterior"
+                    aria-label="Personajes anteriores"
+                >
+                    &#10094;
+                </button>
+
+
+                <div class="personajes-scroll" id="personajesScroll">
+
+                    <article class="personaje">
+                        <img src="img/bella.jpg" alt="Bella Swan">
+                        <div class="personaje-info">
+                            <span>Humana / Vampira</span>
+                            <h3>Bella Swan</h3>
+                            <p>Curiosa · decidida · protectora</p>
+                        </div>
+                    </article>
+
+                    <article class="personaje">
+                        <img src="img/edward.jpg" alt="Edward Cullen">
+                        <div class="personaje-info">
+                            <span>Vampiro</span>
+                            <h3>Edward Cullen</h3>
+                            <p>Telepatía · control · Cullen</p>
+                        </div>
+                    </article>
+
+                    <article class="personaje">
+                        <img src="img/jacob.jpg" alt="Jacob Black">
+                        <div class="personaje-info">
+                            <span>Cambiaformas</span>
+                            <h3>Jacob Black</h3>
+                            <p>Lealtad · fuerza · Quileute</p>
+                        </div>
+                    </article>
+
+                    <article class="personaje">
+                        <img src="img/alice.jpg" alt="Alice Cullen">
+                        <div class="personaje-info">
+                            <span>Vampira</span>
+                            <h3>Alice Cullen</h3>
+                            <p>Visiones · energía · Cullen</p>
+                        </div>
+                    </article>
+
+                    <article class="personaje">
+                        <img src="img/carlisle.jpg" alt="Carlisle Cullen">
+                        <div class="personaje-info">
+                            <span>Vampiro</span>
+                            <h3>Carlisle Cullen</h3>
+                            <p>Médico · compasión · líder</p>
+                        </div>
+                    </article>
+
+                    <article class="personaje">
+                        <img src="img/esme.jpg" alt="Esme Cullen">
+                        <div class="personaje-info">
+                            <span>Vampira</span>
+                            <h3>Esme Cullen</h3>
+                            <p>Familia · calidez · Cullen</p>
+                        </div>
+                    </article>
+
+                    <article class="personaje">
+                        <img src="img/rosalie.jpg" alt="Rosalie Hale">
+                        <div class="personaje-info">
+                            <span>Vampira</span>
+                            <h3>Rosalie Hale</h3>
+                            <p>Determinación · orgullo · Cullen</p>
+                        </div>
+                    </article>
+
+                    <article class="personaje">
+                        <img src="img/emmett.jpg" alt="Emmett Cullen">
+                        <div class="personaje-info">
+                            <span>Vampiro</span>
+                            <h3>Emmett Cullen</h3>
+                            <p>Fuerza · humor · Cullen</p>
+                        </div>
+                    </article>
+
+                    <article class="personaje">
+                        <img src="img/jasper.jpg" alt="Jasper Hale">
+                        <div class="personaje-info">
+                            <span>Vampiro</span>
+                            <h3>Jasper Hale</h3>
+                            <p>Emociones · estrategia · Cullen</p>
+                        </div>
+                    </article>
+
+                    <article class="personaje">
+                        <img src="img/charlie.jpg" alt="Charlie Swan">
+                        <div class="personaje-info">
+                            <span>Humano</span>
+                            <h3>Charlie Swan</h3>
+                            <p>Protector · reservado · Forks</p>
+                        </div>
+                    </article>
+
+                    <article class="personaje">
+                        <img src="img/renesmee.jpg" alt="Renesmee Cullen">
+                        <div class="personaje-info">
+                            <span>Híbrida</span>
+                            <h3>Renesmee Cullen</h3>
+                            <p>Familia · vínculo · futuro</p>
+                        </div>
+                    </article>
+
+                    <article class="personaje">
+                        <img src="img/aro.jpg" alt="Aro Volturi">
+                        <div class="personaje-info">
+                            <span>Vampiro · Volturi</span>
+                            <h3>Aro</h3>
+                            <p>Poder · antigüedad · Volturi</p>
+                        </div>
+                    </article>
+
+                </div>
+
+
+                <button
+                    class="flecha-personaje derecha"
+                    id="personajesSiguiente"
+                    aria-label="Siguientes personajes"
+                >
+                    &#10095;
+                </button>
+
+            </div>
+
+
+            <p class="ayuda-carrusel">
+                Usá las flechas para explorar los personajes.
+            </p>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- MUNDO -->
+        <!-- ========================= -->
+
+        <section class="seccion mundo" id="mundo">
+
+            <div class="titulo-seccion">
+
+                <p class="subtitulo">
+                    EXPLORÁ EL UNIVERSO
+                </p>
+
+                <h2>El mundo de Twilight</h2>
+
+                <p>
+                    Cada lugar esconde una parte diferente
+                    de la historia.
+                </p>
+
+            </div>
+
+
+            <div class="lugares-grid">
+
+            <a
+    href="forks.html"
+    class="lugar"
+    style="background-image: url('img/forks.jpg');"
+>
+    <span>Forks</span>
+</a>
+
+
+              <a
+    href="lapush.html"
+    class="lugar"
+    style="background-image: url('img/lapush.jpg');"
+>
+    <span>La Push</span>
+</a>
+
+
+               <a
+    href="cullen.html"
+    class="lugar"
+    style="background-image: url('img/casa-cullen.jpg');"
+>
+    <span>Casa Cullen</span>
+</a>
+
+<a
+    href="volterra.html"
+    class="lugar"
+    style="background-image: url('img/volturi.jpg');"
+>
+    <span>Volterra</span>
+</a>
+               
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- CURIOSIDADES -->
+        <!-- ========================= -->
+
+        <section class="seccion curiosidades" id="curiosidades">
+
+            <div class="titulo-seccion">
+
+                <p class="subtitulo">
+                    SECRETOS DE LA SAGA
+                </p>
+
+                <h2>Curiosidades</h2>
+
+                <p>
+                    Tocá cada tarjeta para revelar el dato.
+                </p>
+
+            </div>
+
+
+            <div class="curiosidades-grid">
+
+                <button class="curiosidad">
+
+                    <div class="frente">
+                        <span>01</span>
+                        <h3>Los ojos</h3>
+                        <p>Tocá para descubrir</p>
+                    </div>
+
+                    <div class="dorso">
+                        <p>
+                            El color de ojos de los vampiros cambia
+                            según su alimentación y su nivel de sed.
+                        </p>
+                    </div>
+
+                </button>
+
+
+                <button class="curiosidad">
+
+                    <div class="frente">
+                        <span>02</span>
+                        <h3>El béisbol</h3>
+                        <p>Tocá para descubrir</p>
+                    </div>
+
+                    <div class="dorso">
+                        <p>
+                            La escena del béisbol se convirtió
+                            en una de las secuencias más reconocibles
+                            de la primera película.
+                        </p>
+                    </div>
+
+                </button>
+
+
+                <button class="curiosidad">
+
+                    <div class="frente">
+                        <span>03</span>
+                        <h3>Forks</h3>
+                        <p>Tocá para descubrir</p>
+                    </div>
+
+                    <div class="dorso">
+                        <p>
+                            El clima nublado y lluvioso de la zona
+                            encaja perfectamente con el universo vampírico.
+                        </p>
+                    </div>
+
+                </button>
+
+
+                <button class="curiosidad">
+
+                    <div class="frente">
+                        <span>04</span>
+                        <h3>La música</h3>
+                        <p>Tocá para descubrir</p>
+                    </div>
+
+                    <div class="dorso">
+                        <p>
+                            La banda sonora se convirtió
+                            en una parte central de la identidad
+                            melancólica de la saga.
+                        </p>
+                    </div>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+
+        <!-- ========================= -->
+        <!-- QUIZ -->
+        <!-- ========================= -->
+
+        <section class="seccion quiz" id="quiz">
+
+            <div class="titulo-seccion">
+
+                <p class="subtitulo">
+                    TU IDENTIDAD EN FORKS
+                </p>
+
+                <h2>
+                    ¿Vampiro, lobo o humano?
+                </h2>
+
+                <p>
+                    Contestá seis preguntas
+                    y descubrí qué porcentaje tenés de cada mundo.
+                </p>
+
+            </div>
+
+
+            <div class="quiz-caja">
+
+
+                <div id="inicioQuiz" class="inicio-quiz">
+
+                    <h3>
+                        ¿Preparada para descubrir qué serías?
+                    </h3>
+
+                    <p>
+                        Tus elecciones van a determinar el resultado.
+                    </p>
+
+                    <button
+                        id="empezarQuiz"
+                        class="btn principal"
+                    >
+                        Empezar Quiz
+                    </button>
+
+                </div>
+
+
+                <div id="juegoQuiz" class="oculto">
+
+                    <div class="quiz-superior">
+
+                        <span id="numeroPregunta">
+                            Pregunta 1 de 6
+                        </span>
+
+                        <div class="progreso">
+                            <div id="barraProgreso"></div>
+                        </div>
+
+                    </div>
+
+                    <h3 id="pregunta"></h3>
+
+                    <div
+                        id="respuestas"
+                        class="respuestas"
+                    ></div>
+
+                </div>
+
+
+                <div id="resultadoQuiz" class="oculto">
+
+                    <p class="subtitulo">
+                        TU RESULTADO
+                    </p>
+
+                    <h3 id="tituloResultado"></h3>
+
+                    <p id="textoResultado"></p>
+
+
+                    <div class="resultado-porcentajes">
+
+
+                        <div class="porcentaje">
+
+                            <div class="porcentaje-titulo">
+                                <span>Vampiro</span>
+                                <strong id="vampiroNumero">0%</strong>
+                            </div>
+
+                            <div class="barra-resultado">
+                                <div id="vampiroBarra"></div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="porcentaje">
+
+                            <div class="porcentaje-titulo">
+                                <span>Lobo</span>
+                                <strong id="loboNumero">0%</strong>
+                            </div>
+
+                            <div class="barra-resultado">
+                                <div id="loboBarra"></div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="porcentaje">
+
+                            <div class="porcentaje-titulo">
+                                <span>Humano</span>
+                                <strong id="humanoNumero">0%</strong>
+                            </div>
+
+                            <div class="barra-resultado">
+                                <div id="humanoBarra"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        id="repetirQuiz"
+                        class="btn secundario"
+                    >
+                        Repetir Quiz
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- FINAL -->
+        <!-- ========================= -->
+
+        <section class="final">
+
+            <div>
+
+                <p class="subtitulo">
+                    TODAVÍA QUEDAN SECRETOS
+                </p>
+
+                <h2>
+                    Forks recién empieza.
+                </h2>
+
+               
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+<footer class="footer-twilight">
+
+    <div class="footer-contenido">
+
+        <p class="footer-titulo">
+            ENTRE LA NIEBLA Y LA ETERNIDAD
+        </p>
+
+        <p class="footer-frase">
+            Una experiencia inspirada en The Twilight Saga
+        </p>
+
+        <div class="footer-linea"></div>
+
+        <p class="footer-autora">
+            Diseño y desarrollo · Zoe Arcucci
+        </p>
+
+        <p class="footer-info">
+            Universidad de Palermo · 2026
+        </p>
+
+
+    </div>
+
+</footer>
+
+
+    <!-- ========================= -->
+    <!-- MODAL -->
+    <!-- ========================= -->
+
+    <div id="modal" class="modal oculto">
+
+        <div
+            id="fondoModal"
+            class="fondo-modal"
+        ></div>
+
+        <div class="modal-contenido">
+
+            <button id="cerrarModal">
+                ×
+            </button>
+
+            <p class="subtitulo">
+                TWILIGHT ARCHIVE
+            </p>
+
+            <h3 id="modalTitulo"></h3>
+
+            <p id="modalTexto"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
